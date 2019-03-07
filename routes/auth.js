@@ -41,7 +41,7 @@ router.post('/signup', async (req, res, next) => {
       username,
       password: hashedPassword
     };
-     User.create(newUser);
+    User.create(newUser);
     // guardamos el usuario en la session
     // req.session.currentUser = createdUser;
     // Redirigimos para la Homepage
