@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.escape-room-logo {
+  width: 50px;
+  height: auto;
+}

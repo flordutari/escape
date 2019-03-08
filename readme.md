@@ -96,7 +96,7 @@ User model
 
 ```
 ```
-Escape-room model
+EscapeRoom model
 - name: String
 - adress: String
 - description: String
