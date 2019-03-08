@@ -23,8 +23,7 @@ const eventSchema = new Schema({
     required: true
   },
   players: {
-    type: Array:
-      type: ObjectId
+    type: Array
   }
 });
 
