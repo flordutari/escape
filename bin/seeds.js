@@ -6,7 +6,7 @@ const EscapeRoom = require('../models/EscapeRoom');
 const escapeRooms = [
   {
     name: 'Bank of Thaqar',
-    descritption: 'En estos días se encuentra en nuestra ciudad el primer ministro de la República de Thaqar. Ha traído consigo el mayor tesoro de su país, la joya llamada “La Flor de Thaqar”. La ha depositado en una sucursal bancaria de su país, el BANK OF THAQAR y aquí es donde entráis en juego, este es el reto.',
+    description: 'En estos días se encuentra en nuestra ciudad el primer ministro de la República de Thaqar. Ha traído consigo el mayor tesoro de su país, la joya llamada “La Flor de Thaqar”. La ha depositado en una sucursal bancaria de su país, el BANK OF THAQAR y aquí es donde entráis en juego, este es el reto.',
     dificulty: 4,
     duration: 60,
     capacity: { maxPlayers: 6, minPlayers: 2 },
@@ -18,7 +18,7 @@ const escapeRooms = [
   },
   {
     name: 'Wolf',
-    descritption: 'El Doctor Kurt está trabajando en las instalaciones del CECCA (Centro de Estudio, Conservación y Control de Animales), situado a los pies del Monte Altái. A pesar de las interferencias derivadas del clima y la orografía, ha conseguido hacernos llegar un extraño mensaje solicitándonos ayuda a causa de algunos sucesos extraños que le han ocurrido.',
+    description: 'El Doctor Kurt está trabajando en las instalaciones del CECCA (Centro de Estudio, Conservación y Control de Animales), situado a los pies del Monte Altái. A pesar de las interferencias derivadas del clima y la orografía, ha conseguido hacernos llegar un extraño mensaje solicitándonos ayuda a causa de algunos sucesos extraños que le han ocurrido.',
     dificulty: 4,
     duration: 60,
     capacity: { maxPlayers: 6, minPlayers: 2 },
@@ -30,7 +30,7 @@ const escapeRooms = [
   },
   {
     name: 'Enigma Puccini / Liceo Room Escape',
-    descritption: 'Un escenario único donde podréis disfrutar de una experiencia escape room en EL GRAN TEATRE DEL LICEU. Un número limitado de afortunados podrán disfrutar de esta aventura. Solo los más rápidos y atentos a las redes de Missionleak podrán reservar las únicas plazas.',
+    description: 'Un escenario único donde podréis disfrutar de una experiencia escape room en EL GRAN TEATRE DEL LICEU. Un número limitado de afortunados podrán disfrutar de esta aventura. Solo los más rápidos y atentos a las redes de Missionleak podrán reservar las únicas plazas.',
     dificulty: 4,
     duration: 60,
     capacity: { maxPlayers: 6, minPlayers: 4 },
