@@ -12,10 +12,12 @@ router.get('/list', async (req, res, next) => {
   }
 });
 
-router.get('/list/:id', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
+  const { id } = req.params;
+  // const {_id} = req.session.currentuser;
   try {
-    const escapeRooms = await EscapeRoom.find();
-    res.render('escape-rooms/list', { escapeRooms });
+    const escapeRooms = await EscapeRoom.findById(id);
+    res.render('escape-rooms/detail', { escapeRooms });
   } catch (error) {
     next(error);
   }
