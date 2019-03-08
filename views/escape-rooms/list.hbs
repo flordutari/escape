@@ -1,0 +1,12 @@
+<h1>Escape Rooms List</h1>
+
+<ul>
+  {{#each escapeRooms}}
+    <li>
+      <img src="{{this.image}}" alt="{{this.name}}">
+      <p>{{this.name}}</p>
+      {{!-- <a href="/movies/{{this.id}}">See more</a> --}}
+      <a href="/escape/{{this._id}}/detail">detail</a>
+    </li>
+  {{/each}}
+</ul>
