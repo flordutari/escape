@@ -17,7 +17,6 @@ const escapeRoomSchema = new Schema({
   duration: {
     type: Number,
     default: 60
-
   },
   capacity: {
     maxPlayers: {

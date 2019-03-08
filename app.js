@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/escape', escapeRouter);
-app.use('/events', eventRouter);
+app.use('/events', eventsRouter);
 
 // -- 404 and error handler
 

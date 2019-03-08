@@ -1,0 +1,25 @@
+<h1>Create event</h1>
+
+<form method="POST" action="/list">
+
+  <div class="field" >
+    <label>Showtime</label>
+    <select id="time-select" name="time">
+      {{#each escapeRoom.schedule.showtime}}
+    </select>
+  </div>
+
+  <div class="field" >
+    <label>Date</label>
+    <input type="date" name="date"/>
+  </div>
+
+  <div class="field" >
+    <label>Date</label>
+    <input type="date" name="date"/>
+  </div>
+
+  <div class="field submit">
+    <button type="submit">Save</button>
+  </div>
+</form>

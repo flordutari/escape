@@ -6,7 +6,7 @@ const ObjectId = Schema.Types.ObjectId;
 const eventSchema = new Schema({
   escapeRoom: {
     type: ObjectId,
-    ref: 'Escape room',
+    ref: 'EscapeRoom',
     required: true
   },
   creator: {
@@ -22,9 +22,10 @@ const eventSchema = new Schema({
     type: String,
     required: true
   },
-  players: {
-    type: Array
-  }
+  players: [{
+    type: ObjectId,
+    ref: 'User'
+  }]
 });
 
 const Event = mongoose.model('Event', eventSchema);
