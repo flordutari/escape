@@ -1,0 +1,11 @@
+<h1>events list</h1>
+<ul>
+  {{#each event}}
+    <li>
+      <p>{{this.escapeRoom}}</p>
+      <p>{{this._id}}</p>
+      <p>{{this.date}}</p>
+      <p>{{this.showtime}}</p>
+    </li>
+  {{/each}}
+</ul>

@@ -1,25 +1,36 @@
+'use strict';
 const express = require('express');
 const router = express.Router();
 
-const EscapeRoom = require('../models/EscapeRoom');
-const User = require('../models/User');
 const Event = require('../models/Event');
 
 /* GET users listing. */
+router.get('/list', async (req, res, next) => {
+  try {
+    const event = await Event.find();
+    res.render('events/list', { event });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get('/:id/create', (req, res, next) => {
   const { id } = req.params;
   res.render('events/create', { id });
 });
 
-// router.get('/:id', async (req, res, next) => {
-//   const { id } = req.params;
-//   // const {_id} = req.session.currentuser;
-//   try {
-//     const escapeRoom = await EscapeRoom.findById(id);
-//     res.render('escape-rooms/detail', { escapeRoom });
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+router.post('/list', async (req, res, next) => {
+  const { showtime, date } = req.body;
+  const event = {
+    date,
+    showtime
+  };
+  try {
+    await Event.create(event);
+    res.redirect('/events/list');
+  } catch (error) {
+    next(error);
+  }
+});
 
 module.exports = router;

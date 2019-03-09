@@ -1,10 +1,10 @@
 <h1>Create event</h1>
 
-<form method="POST" action="/list">
+<form action="/events/list" method="POST">
 
   <div class="field" >
     <label>Showtime</label>
-    <select id="time-select" name="time">
+    <select id="time-select" name="showtime" value="{{showtime}}">
       <option value="17:00">17:00</option>
       <option value="18:30">18:30</option>
       <option value="20:00">20:00</option>
@@ -15,10 +15,10 @@
 
   <div class="field">
     <label>Date</label>
-    <input type="date" name="date"/>
+    <input type="date" name="date" value="{{date}}"/>
   </div>
 
-  <input type="hidden" name="_id" value="_id"/>
+  <input type="text" name="_id" value="{{id}}"/>
   
   <div class="field submit">
     <button type="submit">Save</button>

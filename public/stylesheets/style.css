@@ -1,10 +1,7 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+  margin: 0;
+  padding: 0;
+  font: 14px 'Lato', Helvetica, Arial, sans-serif;
 }
 
 .escape-room-logo {
@@ -15,4 +12,11 @@ a {
 img {
   width:70vw;
   height: auto;
+}
+
+nav {
+height: 8vh;
+background-color: #1a1a1a;
+color: rgb(245, 245, 245);
+display: fixed;
 }
