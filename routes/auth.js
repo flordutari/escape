@@ -38,7 +38,7 @@ router.post('/signup', requireAnon, requireFields, async (req, res, next) => {
     // guardamos el usuario en la session
     req.session.currentUser = createdUser;
     // Redirigimos para la Homepage
-    res.redirect('/');
+    res.redirect('../events/list');
   } catch (error) {
     next(error);
   }
@@ -65,13 +65,13 @@ router.post('/login', requireAnon, requireFields, async (req, res, next) => {
     if (bcrypt.compareSync(password, user.password)) {
       //  lo siguiente es para guardar la session (mediante el cookie)
       req.session.currentUser = user;
-      res.redirect('/');
+      res.redirect('../events/list');
     } else {
       req.flash('validation', 'Username or password incorrect');
       res.redirect('/auth/login');
     }
     // Redirigimos para la Homepage
-    res.redirect('/');
+    res.redirect('../events/list');
   } catch (error) {
     next(error);
   }

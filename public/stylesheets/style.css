@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 50px;
   font: 14px 'Lato', Helvetica, Arial, sans-serif;
 }
 
@@ -16,7 +16,12 @@ img {
 
 nav {
 height: 8vh;
-background-color: #1a1a1a;
+background-color:lightslategray;
 color: rgb(245, 245, 245);
 display: fixed;
+}
+
+a {
+  text-decoration: none;
+  
 }

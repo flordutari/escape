@@ -1,0 +1,13 @@
+<h1>Event Detail</h1>
+
+<div>
+  <p>{{event.creator.username}}</p>
+  <img src="{{event.escapeRoom.image}}">
+  <p>{{event.date}}</p>
+  <p>{{event.showtime}}</p>
+  <p>{{event.players.0.username}}</p>
+</div>
+<form action="/events/{{event._id}}" method="post">
+<button>{{event.players.0.username}}</button>
+<button type="submit">jj{{event.players.1.username}}</button>
+</form>

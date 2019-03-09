@@ -2,11 +2,13 @@
 <ul>
   {{#each event}}
     <li>
-      <p>{{this.escapeRoom}}</p>
-      <p>{{this._id}}</p>
+      <img src="{{this.escapeRoom.image}}" alt="{{this.escapeRoom.name}} image">
+      <p>{{this.escapeRoom.name}}</p>
       <p>{{this.date}}</p>
       <p>{{this.showtime}}</p>
-      <p>{{this.creator}}</p>
+      <p>{{this.creator.username}}</p>
+      <a href="/events/{{this._id}}">Join</a>
     </li>
   {{/each}}
+  <a href="../escape/list">Escape Rooms</a>
 </ul>
