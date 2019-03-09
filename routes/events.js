@@ -5,6 +5,7 @@ const router = express.Router();
 const Event = require('../models/Event');
 
 /* GET users listing. */
+
 router.get('/list', async (req, res, next) => {
   try {
     const event = await Event.find();
@@ -26,11 +27,37 @@ router.post('/list', async (req, res, next) => {
     escapeRoom,
     date,
     showtime
+
   };
   try {
     event.creator = req.session.currentUser._id;
+    event.players = [req.session.currentUser._id];
     await Event.create(event);
+    console.log(event.players);
     res.redirect('/events/list');
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/:id', async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const event = await Event.findById(id).populate('creator escapeRoom players');
+    console.log(event.date);
+    res.render('events/detail', { event });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/:id', async (req, res, next) => {
+  const { id } = req.params;
+  const { _id } = req.session.currentUser;
+  try {
+    const event = await Event.findByIdAndUpdate(id);
+    console.log(event.date);
+    res.render('events/detail', { event });
   } catch (error) {
     next(error);
   }
