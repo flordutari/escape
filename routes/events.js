@@ -44,7 +44,6 @@ router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const event = await Event.findById(id).populate('creator escapeRoom players');
-    console.log(event.date);
     res.render('events/detail', { event });
   } catch (error) {
     next(error);
@@ -55,9 +54,8 @@ router.post('/:id', async (req, res, next) => {
   const { id } = req.params;
   const { _id } = req.session.currentUser;
   try {
-    const event = await Event.findByIdAndUpdate(id);
-    console.log(event.date);
-    res.render('events/detail', { event });
+    await Event.findByIdAndUpdate(id, { $push: { 'players': { _id } } }).populate('creator escapeRoom players users');
+    res.redirect('/events/' + id);
   } catch (error) {
     next(error);
   }
