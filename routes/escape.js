@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express');
 const router = express.Router();
 
@@ -6,8 +7,6 @@ const EscapeRoom = require('../models/EscapeRoom');
 router.get('/list', async (req, res, next) => {
   try {
     const escapeRoom = await EscapeRoom.find();
-    console.log(escapeRoom);
-
     res.render('escape-rooms/list', { escapeRoom });
   } catch (error) {
     next(error);

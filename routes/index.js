@@ -1,3 +1,4 @@
+'use strict';
 const express = require('express');
 const router = express.Router();
 
@@ -5,9 +6,5 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
   res.render('index');
 });
-
-// router.get('/escape/list', (req, res, next) => {
-//   res.render('escape-rooms/list');
-// });
 
 module.exports = router;
