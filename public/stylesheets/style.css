@@ -91,7 +91,7 @@ display: flex;
   border-radius: 25px;
   height: 50px;
   width: 150px;
-  background-color: #A30015;
+  background: linear-gradient(135deg, rgba(237,11,124,1) 0%,rgba(124,0,226,1) 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color:  #fafafa;
   font-size: 20px;
   font-weight: 600;
@@ -127,7 +127,7 @@ ul.validation {
 
 .events-list{
   width: 100%;
-  background-color: #fafafa;
+  background-color: #453750;
 }
 
 .events h1 {
@@ -136,7 +136,7 @@ ul.validation {
 
 .events {
   display: flex;
-  color:  #212636;
+  color:  #fafafa;
   margin: 8vh 20px;
   flex-direction: column;
 }
@@ -157,12 +157,9 @@ ul.validation {
   flex-direction: column;
 }
 
-.events p {
-  margin: 5px 0;
-}
-
 .events p:first-of-type {
   margin: 8px 0;
+  color: #ed0b7c;
 }
 
 .events img {
@@ -200,7 +197,8 @@ div.escapes-link {
 
 a.join {
   text-transform: uppercase;
-  background-color: #A30015;
+  background: #ed0b7c; /* Old browsers */
+  background: linear-gradient(135deg, #ed0b7c 0%,#7c00e2 100%,rgba(0,36,0,1) 100%);
   text-decoration: none;
   color: #fafafa;
   width: auto;
@@ -225,6 +223,10 @@ hr {
   border: none;
   width: 100%;
   height: 1px;
-  background-color: #212636;
+  background-color: #fafafa;
   margin: 0 0 15px 0;
+}
+
+p{
+  margin: 0;
 }

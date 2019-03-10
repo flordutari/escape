@@ -1,21 +1,5 @@
 <div class="events-list">
-  <nav>
-    <div class="arrow"><a href="/events/list"></a></div>
-    {{#if currentUser}}
-    <div class="nav-bar">
-      <form action="/auth/logout" method="POST">
-        <button class="logout" type="submit">Logout</button>
-      </form>
-      <div class="profile">
-        <p>{{currentUser.username}}</p>
-        <img id="def-prof" src="{{currentUser.imageUrl}}" alt="{{currentUser.username}} image">  
-      </div>
-    </div>
-    {{else}}
-      <a href="/auth/signup">Signup</a>
-      <a href="/auth/login">Login</a>
-    {{/if}}
-  </nav>  
+  {{> navbar}} 
   <div class="events">
     <h1>Event Detail</h1>
 
@@ -25,9 +9,13 @@
       <p>{{event.showtime}}</p>
       <p>{{event.players.0.username}}</p>
     </div>
-    <form action="/events/{{event._id}}" method="post">
-      <button>{{event.players.0.username}}</button>
+    <form class="field" action="/events/{{event._id}}" method="post">
+      <button >{{event.players.0.username}}</button>
       <button type="submit">{{event.players.1.username}}</button>
+      <button type="submit">{{event.players.2.username}}</button>
+      <button type="submit">{{event.players.3.username}}</button>
+      <button type="submit">{{event.players.4.username}}</button>
+      <button type="submit">{{event.players.5.username}}</button>
     </form>
   </div>
-</div>  
+</div>
