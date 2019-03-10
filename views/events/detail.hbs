@@ -24,16 +24,17 @@
       <p>{{event.showtime}}</p>
       <p>{{event.players.0.username}}</p>
 
-      <form class="center" action="/events/{{event._id}}" method="post">
+      <form class="center" action="/events/{{event._id}}/delete" method="post">
         <div class="field other">
         {{#each event.players}}
+        <button>
         <img class="player" src="{{imageUrl}}" alt="{{username}} image">
+        </button>
         {{/each}}
         </div>
-        <button class="join">JOIN</button>
       </form>
-      <form class="center" action="/events/{{event._id}}/delete" method="post">
-        <button class="join">UnJoin</button>
+      <form class="center" action="/events/{{event._id}}" method="post">
+        <button class="join">Join</button>
       </form>
   </div>
 </div>
