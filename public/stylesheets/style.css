@@ -1,12 +1,25 @@
-body {
-  margin: 0;
-  padding: 50px;
-  font: 14px 'Lato', Helvetica, Arial, sans-serif;
+* html #footer {
+  position:absolute;
+  top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
 
-.escape-room-logo {
-  width: 50px;
-  height: auto;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font: 14px 'Montserrat', Helvetica, Arial, sans-serif;
+  color: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0 0 10px 0;
+  font-weight: 900;
+}
+
+li {
+  list-style: none;
 }
 
 img {
@@ -16,12 +29,209 @@ img {
 
 nav {
 height: 8vh;
-background-color:lightslategray;
-color: rgb(245, 245, 245);
-display: fixed;
+width: 100%;
+position: absolute;
+background-color: #212636;
+color: #fafafa;
+display: flex;
 }
 
-a {
+.nav-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}
+
+#def-prof {
+  margin: 0 10px;
+  height: 6vh;
+  width: default;
+}
+
+.login a {
+  color: #fafafa;
+  margin-left: 100px;
+}
+
+.escape-room-logo {
+  width: 180px;
+  height: auto;
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+
+.login {
+  background-color: #212636;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  margin: 15px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field label {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.field button {
+  margin-top: 25px;
+  padding: 0;
+  border: none;
+  border-radius: 25px;
+  height: 50px;
+  width: 150px;
+  background: linear-gradient(135deg, rgba(237,11,124,1) 0%,rgba(124,0,226,1) 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color:  #fafafa;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  outline: none;
+}
+
+button.logout {
+  background-color:  #212636;
+  border: none;
+  color:  #fafafa;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  outline: none;
+  margin-left: 10px;
+}
+
+input {
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  width: 200px;
+  outline: none;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+ul.validation {
+  align-self: center;
+  padding: 0;
+}
+
+.events-list{
+  width: 100%;
+  background-color: #453750;
+}
+
+.events h1 {
+  margin-top: 20px;
+}
+
+.events {
+  display: flex;
+  color:  #fafafa;
+  margin: 8vh 20px;
+  flex-direction: column;
+}
+
+.events ul {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.events li {
+  width: 45%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.events p:first-of-type {
+  margin: 8px 0;
+  color: #ed0b7c;
+}
+
+.events img {
+ width: 100%; 
+}
+
+.name {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+div.escapes-link {
+  width: 100%;
+  height: 7vh;
+  position: relative;
+  background-color: #212636;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: vh;
+  width: 100%;
+}
+
+.escapes-link a {
+  color: #fafafa;
   text-decoration: none;
-  
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 18px;
+  align-self: center;
+}
+
+a.join {
+  text-transform: uppercase;
+  background: #ed0b7c; /* Old browsers */
+  background: linear-gradient(135deg, #ed0b7c 0%,#7c00e2 100%,rgba(0,36,0,1) 100%);
+  text-decoration: none;
+  color: #fafafa;
+  width: auto;
+  padding: 7px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  align-self: center;
+  margin-top: 10px;
+}
+
+div.arrow {
+  border-bottom: 2px solid #fafafa;
+  border-right: 2px solid #fafafa;
+  width: 18px;
+  height: 15px;
+  transform: rotate(135deg);
+  margin-left: 25px;
+  align-self: center;
+}
+
+hr {
+  border: none;
+  width: 100%;
+  height: 1px;
+  background-color: #fafafa;
+  margin: 0 0 15px 0;
+}
+
+p{
+  margin: 0;
 }

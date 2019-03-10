@@ -1,13 +1,21 @@
-<h1>Event Detail</h1>
+<div class="events-list">
+  {{> navbar}} 
+  <div class="events">
+    <h1>Event Detail</h1>
 
-<div>
-  <p>{{event.creator.username}}</p>
-  <img src="{{event.escapeRoom.image}}">
-  <p>{{event.date}}</p>
-  <p>{{event.showtime}}</p>
-  <p>{{event.players.0.username}}</p>
+    <div class="events">
+      <img src="{{event.escapeRoom.image}}">
+      <p>{{event.date}}</p>
+      <p>{{event.showtime}}</p>
+      <p>{{event.players.0.username}}</p>
+    </div>
+    <form class="field" action="/events/{{event._id}}" method="post">
+      <button >{{event.players.0.username}}</button>
+      <button type="submit">{{event.players.1.username}}</button>
+      <button type="submit">{{event.players.2.username}}</button>
+      <button type="submit">{{event.players.3.username}}</button>
+      <button type="submit">{{event.players.4.username}}</button>
+      <button type="submit">{{event.players.5.username}}</button>
+    </form>
+  </div>
 </div>
-<form action="/events/{{event._id}}" method="post">
-<button>{{event.players.0.username}}</button>
-<button type="submit">jj{{event.players.1.username}}</button>
-</form>

@@ -29,7 +29,7 @@ const escapeRooms = [
     image: 'http://www.missionleak.com/web/wp-content/uploads/2018/10/wolf_escape_room.png'
   },
   {
-    name: 'Enigma Puccini / Liceo Room Escape',
+    name: 'Enigma Puccini',
     description: 'Un escenario único donde podréis disfrutar de una experiencia escape room en EL GRAN TEATRE DEL LICEU. Un número limitado de afortunados podrán disfrutar de esta aventura. Solo los más rápidos y atentos a las redes de Missionleak podrán reservar las únicas plazas.',
     dificulty: 4,
     duration: 60,
