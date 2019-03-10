@@ -1,21 +1,21 @@
-<a href="/">Go back</a>
+<div class="login">
+  <img class="escape-room-logo" src="../images/labyrinth.png" alt="logo">
+  <form method="POST" action="/auth/signup">
+    <div class="field" >
+      <label>Username</label>
+      <input type="text" name="username"/>
+    </div>
 
-<h1>Sign up</h1>
-<form method="POST" action="/auth/signup">
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="password"/>
+    </div>
 
- <div class="field" >
-   <label>Username</label>
-   <input type="text" name="username"/>
- </div>
+    <div class="field submit">
+      <button type="submit">Signup</button>
+    </div>
+    <a href="/auth/signup">or Login</a>
+  </form>
 
- <div class="field" >
-   <label>Password</label>
-   <input type="password" name="password"/>
- </div>
-
- <div class="field submit">
-   <button type="submit">Signup</button>
- </div>
-</form>
-
-{{> flash}}
+  {{> flash}}
+</div>

@@ -28,7 +28,6 @@ router.post('/list', requireUser, async (req, res, next) => {
     escapeRoom,
     date,
     showtime
-
   };
   try {
     event.creator = req.session.currentUser._id;

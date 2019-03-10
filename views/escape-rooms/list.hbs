@@ -1,12 +1,37 @@
-<h1>Escape Rooms List</h1>
+<div class="events-list">
+  <nav>
+    <div class="arrow"><a href="/events/list"></a></div>
+    {{#if currentUser}}
+    <div class="nav-bar">
+      <form action="/auth/logout" method="POST">
+        <button class="logout" type="submit">Logout</button>
+      </form>
+      <div class="profile">
+        <p>{{currentUser.username}}</p>
+        <img id="def-prof" src="{{currentUser.imageUrl}}" alt="{{currentUser.username}} image">  
+      </div>
+    </div>
+    {{else}}
+      <a href="/auth/signup">Signup</a>
+      <a href="/auth/login">Login</a>
+    {{/if}}
+  </nav>
 
-<ul>
-  {{#each escapeRoom}}
-    <li>
-      <img src="{{this.image}}" alt="{{this.name}}">
-      <p>{{this.name}}</p>
-      {{!-- <a href="/movies/{{this.id}}">See more</a> --}}
-      <a href="/escape/{{this._id}}">Create Event</a>
-    </li>
-  {{/each}}
-</ul>
+  <div class="events">
+    <h1>Escape Rooms List</h1>
+    <hr>
+    <ul>
+      {{#each escapeRoom}}
+        <li>
+          <img src="{{this.image}}" alt="{{this.name}}">
+          <p class="name">{{this.name}}</p>
+          {{!-- <a href="/movies/{{this.id}}">See more</a> --}}
+          <a class="join" href="/escape/{{this._id}}">Create Event</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div id="footer" class="escapes-link">
+    <a href="../events/list">Events list</a>
+  </div>
+</div>

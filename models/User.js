@@ -13,7 +13,7 @@ const userSchema = new Schema({
   },
   imageUrl: {
     type: String,
-    default: ''
+    default: '/images/default.png'
   },
   description: {
     type: String,

@@ -1,14 +1,39 @@
-<h1>events list</h1>
-<ul>
-  {{#each event}}
-    <li>
-      <img src="{{this.escapeRoom.image}}" alt="{{this.escapeRoom.name}} image">
-      <p>{{this.escapeRoom.name}}</p>
-      <p>{{this.date}}</p>
-      <p>{{this.showtime}}</p>
-      <p>{{this.creator.username}}</p>
-      <a href="/events/{{this._id}}">Join</a>
-    </li>
-  {{/each}}
-  <a href="../escape/list">Escape Rooms</a>
-</ul>
+<div class="events-list">
+  <nav>
+    <div class="arrow"><a href="/events/list"></a></div>
+    {{#if currentUser}}
+    <div class="nav-bar">
+      <form action="/auth/logout" method="POST">
+        <button class="logout" type="submit">Logout</button>
+      </form>
+      <div class="profile">
+        <p>{{currentUser.username}}</p>
+        <img id="def-prof" src="{{currentUser.imageUrl}}" alt="{{currentUser.username}} image">  
+      </div>
+    </div>
+    {{else}}
+      <a href="/auth/signup">Signup</a>
+      <a href="/auth/login">Login</a>
+    {{/if}}
+  </nav>
+
+  <div class="events">
+    <h1>Events</h1>
+    <hr>
+    <ul>
+      {{#each event}}
+        <li>
+          <img src="{{this.escapeRoom.image}}" alt="{{this.escapeRoom.name}} image">
+          <p class="name">{{this.escapeRoom.name}}</p>
+          <p>{{this.date}}</p>
+          <p>{{this.showtime}}</p>
+          <p>{{this.creator.username}}</p>
+          <a class="join" href="/events/{{this._id}}">Join</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div id="footer" class="escapes-link">
+    <a href="../escape/list">Escape Rooms</a>
+  </div>
+</div>
