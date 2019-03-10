@@ -1,5 +1,6 @@
 'use strict';
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 
 const Event = require('../models/Event');
@@ -60,6 +61,20 @@ router.post('/:id', requireUser, async (req, res, next) => {
     } else {
       res.redirect('/events/' + id);
     }
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/:id/delete', requireUser, async (req, res, next) => {
+  const { id } = req.params;
+  const { _id } = req.session.currentUser;
+  const event = await Event.findById(id).populate('creator escapeRoom players users');
+  try {
+    // var userID = mongoose.mongo.ObjectID(_id);
+    console.log(event.players);
+    await event.players.findByIdAndDelete(id);
+    res.redirect('/events/' + id);
   } catch (error) {
     next(error);
   }

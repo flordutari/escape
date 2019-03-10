@@ -26,15 +26,9 @@ const eventSchema = new Schema({
     type: [{
       type: ObjectId,
       ref: 'User'
-    }],
-    limit: 2,
-    validate: [arrayLimit, '{PATH} exceeds the limit of 3']
+    }]
   }
 });
-
-function arrayLimit (players) {
-  return players.length <= 3;
-}
 
 const Event = mongoose.model('Event', eventSchema);
 module.exports = Event;
