@@ -20,6 +20,7 @@ router.get('/list', requireUser, async (req, res, next) => {
 router.get('/:id/create', requireUser, (req, res, next) => {
   const { id } = req.params;
   const { _id } = req.session.currentUser;
+
   res.render('events/create', { id, _id });
 });
 
@@ -69,11 +70,9 @@ router.post('/:id', requireUser, async (req, res, next) => {
 router.post('/:id/delete', requireUser, async (req, res, next) => {
   const { id } = req.params;
   const { _id } = req.session.currentUser;
-  const event = await Event.findById(id).populate('creator escapeRoom players users');
   try {
-    // var userID = mongoose.mongo.ObjectID(_id);
-    console.log(event.players);
-    await event.players.findByIdAndDelete(id);
+    const userID = mongoose.mongo.ObjectID(_id);
+    await Event.findByIdAndUpdate(id, { $pull: { 'players': userID } });
     res.redirect('/events/' + id);
   } catch (error) {
     next(error);
