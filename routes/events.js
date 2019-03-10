@@ -52,9 +52,14 @@ router.get('/:id', requireUser, async (req, res, next) => {
 router.post('/:id', requireUser, async (req, res, next) => {
   const { id } = req.params;
   const { _id } = req.session.currentUser;
+  const event = await Event.findById(id).populate('creator escapeRoom players users');
   try {
-    await Event.findByIdAndUpdate(id, { $push: { 'players': { _id } } }).populate('creator escapeRoom players users');
-    res.redirect('/events/' + id);
+    if (event.players.length < event.escapeRoom.capacity.maxPlayers) {
+      await Event.findByIdAndUpdate(id, { $push: { 'players': { _id } } });
+      res.redirect('/events/' + id);
+    } else {
+      res.redirect('/events/' + id);
+    }
   } catch (error) {
     next(error);
   }

@@ -5,10 +5,10 @@ const router = express.Router();
 /* GET home page. */
 router.get('/', (req, res, next) => {
   if (!req.session.currentUser) {
-    res.redirect('/auth/login');
-    return;
+    res.redirect('../auth/login');
+  } else {
+    res.redirect('../events/list');
   }
-  res.render('index');
 });
 
 module.exports = router;
