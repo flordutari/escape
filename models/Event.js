@@ -22,11 +22,19 @@ const eventSchema = new Schema({
     enum: ['17:00', '18:30', '20:00', '21:30', '23:00'],
     required: true
   },
-  players: [{
-    type: ObjectId,
-    ref: 'User'
-  }]
+  players: {
+    type: [{
+      type: ObjectId,
+      ref: 'User'
+    }],
+    limit: 2,
+    validate: [arrayLimit, '{PATH} exceeds the limit of 3']
+  }
 });
+
+function arrayLimit (players) {
+  return players.length <= 3;
+}
 
 const Event = mongoose.model('Event', eventSchema);
 module.exports = Event;

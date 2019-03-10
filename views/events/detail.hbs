@@ -1,19 +1,36 @@
 <div class="events-list">
-  {{> navbar}} 
-  <div class="events">
+  <nav>
+    <div class="arrow"><a href="/events/list"></a></div>
+    {{#if currentUser}}
+      <div class="nav-bar">
+        <form action="/auth/logout" method="POST">
+          <button class="logout" type="submit">Logout</button>
+        </form>
+        <div class="profile">
+          <p>{{currentUser.username}}</p>
+          <img id="def-prof" src="{{currentUser.imageUrl}}" alt="{{currentUser.username}} image">  
+        </div>
+      </div>
+    {{else}}
+      <a href="/auth/signup">Signup</a>
+      <a href="/auth/login">Login</a>
+    {{/if}}
+  </nav>
+  <div class="field other">
     <h1>Event Detail</h1>
 
-      <img src="{{event.escapeRoom.image}}">
+      <img class="detail" src="{{event.escapeRoom.image}}">
       <p>{{event.date}}</p>
       <p>{{event.showtime}}</p>
       <p>{{event.players.0.username}}</p>
-    </div class="player">
-    <form class="field" action="/events/{{event._id}}" method="post">
-      {{#each event.players}}
-      <img class="player" src="{{imageUrl}}" alt="{{username}} image">
-      {{/each}}
-      <button>JOIN</button>
-    </form>
-    </div>
+
+      <form class="center" action="/events/{{event._id}}" method="post">
+        <div class="field other">
+        {{#each event.players}}
+        <img class="player" src="{{imageUrl}}" alt="{{username}} image">
+        {{/each}}
+        </div>
+        <button class="join">JOIN</button>
+      </form>
   </div>
 </div>

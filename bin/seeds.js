@@ -12,7 +12,7 @@ const escapeRooms = [
     capacity: { maxPlayers: 6, minPlayers: 2 },
     direction: 'Ctra. Esplugues, 47, Local 8, 08940 Cornellá de Llobregat, Barcelona',
     location: '41.356467, 2.071869',
-    schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', '18:30', '20:00', '21:30', '23:00'] },
+    schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/cropped-careta_missionleak-1.png',
     image: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/flor-thaqar.jpg'
   },
@@ -24,7 +24,7 @@ const escapeRooms = [
     capacity: { maxPlayers: 10, minPlayers: 2 },
     direction: 'local, Carrer de Lepanto, 18, 08940 Cornellà de Llobregat, Barcelona',
     location: '41.351964, 2.087888',
-    schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', '18:30', '20:00', '21:30', '23:00'] },
+    schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/cropped-careta_missionleak-1.png',
     image: 'http://www.missionleak.com/web/wp-content/uploads/2018/10/wolf_escape_room.png'
   },
@@ -36,7 +36,7 @@ const escapeRooms = [
     capacity: { maxPlayers: 4, minPlayers: 4 },
     direction: 'La Rambla, 51-59, 08002 Barcelona',
     location: '41.380204, 2.173294',
-    schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', '18:30', '20:00', '21:30', '23:00'] },
+    schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/cropped-careta_missionleak-1.png',
     image: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/enigma-puccini.jpg'
   }

@@ -89,7 +89,7 @@ display: flex;
   font-size: 18px;
 }
 
-.field button {
+.field button, button.join {
   margin-top: 25px;
   padding: 0;
   border: none;
@@ -102,6 +102,7 @@ display: flex;
   font-weight: 600;
   font-family: 'Montserrat';
   outline: none;
+  align-self: center;
 }
 
 button.logout {
@@ -232,6 +233,26 @@ hr {
   margin: 0 0 15px 0;
 }
 
-p{
+.events p {
   margin: 0;
+}
+
+img.player {
+  width: 30%;
+  margin: 5px;
+}
+
+img.detail {
+  width: 100%;
+}
+
+div.other {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+form.center {
+  display: flex;
+  flex-direction: column;
 }
