@@ -14,7 +14,7 @@ const eventSchema = new Schema({
     ref: 'User'
   },
   date: {
-    type: Date,
+    type: String,
     required: true
   },
   showtime: {

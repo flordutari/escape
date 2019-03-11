@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const moment = require('moment');
 const Event = require('../models/Event');
 
 const { requireUser } = require('../middlewares/index');
@@ -25,7 +26,8 @@ router.get('/:id/create', requireUser, (req, res, next) => {
 });
 
 router.post('/list', requireUser, async (req, res, next) => {
-  const { escapeRoom, showtime, date } = req.body;
+  const { escapeRoom, showtime, inputDate } = req.body;
+  const date = moment(new Date(`${inputDate}`)).format('ll');
   const event = {
     escapeRoom,
     date,

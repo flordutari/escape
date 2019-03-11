@@ -6,6 +6,7 @@ body {
   color: #fafafa;
   display: flex;
   flex-direction: column;
+  background-color: grey;
 }
 
 h1 {
@@ -19,10 +20,10 @@ li {
   list-style: none;
 }
 
-img {
+/* img {
   width:70vw;
   height: auto;
-}
+} */
 
 nav {
   height: 8vh;
@@ -47,10 +48,15 @@ nav {
   flex-direction: row;
 }
 
+#profile img{
+width: 70vw;
+height: auto;
+}
+
 #def-prof {
   margin: 0 15px;
   height: 6vh;
-  width: default;
+  width: auto;
 }
 
 .login a {
@@ -250,6 +256,7 @@ hr {
 
 img.player {
   width: 30%;
+  height: auto;
   margin: 5px;
 }
 
