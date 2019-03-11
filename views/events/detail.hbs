@@ -1,39 +1,23 @@
 <div class="events-list">
-  <nav>
-    <div class="arrow"><a href="/events/list"></a></div>
-    {{#if currentUser}}
-      <div class="nav-bar">
-        <form action="/auth/logout" method="POST">
-          <button class="logout" type="submit">Logout</button>
-        </form>
-        <div class="profile">
-          <p>{{currentUser.username}}</p>
-          <img id="def-prof" src="{{currentUser.imageUrl}}" alt="{{currentUser.username}} image">  
-        </div>
+  {{> navbar}}
+  <div class="events">
+    <h1>EVENT</h1>
+    <hr>
+    <img class="detail" src="{{event.escapeRoom.image}}">
+    <p>{{event.date}}</p>
+    <p>{{event.showtime}}</p>
+    <p>{{event.players.0.username}}</p>
+
+    <form class="center" action="/events/{{event._id}}" method="post">
+      <div class="field other">
+      {{#each event.players}}
+      <img class="player" src="{{imageUrl}}" alt="{{username}} image">
+      {{/each}}
       </div>
-    {{else}}
-      <a href="/auth/signup">Signup</a>
-      <a href="/auth/login">Login</a>
-    {{/if}}
-  </nav>
-  <div class="field other">
-    <h1>Event Detail</h1>
-
-      <img class="detail" src="{{event.escapeRoom.image}}">
-      <p>{{event.date}}</p>
-      <p>{{event.showtime}}</p>
-      <p>{{event.players.0.username}}</p>
-
-      <form class="center" action="/events/{{event._id}}" method="post">
-        <div class="field other">
-        {{#each event.players}}
-        <img class="player" src="{{imageUrl}}" alt="{{username}} image">
-        {{/each}}
-        </div>
-        <button class="join">JOIN</button>
-      </form>
-      <form class="center" action="/events/{{event._id}}/delete" method="post">
-        <button class="join">UnJoin</button>
-      </form>
+      <button class="join">JOIN</button>
+    </form>
+    <form class="center" action="/events/{{event._id}}/delete" method="post">
+      <button class="join">UNJOIN</button>
+    </form>
   </div>
 </div>
