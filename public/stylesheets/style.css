@@ -379,3 +379,8 @@ form.center {
   font-size: 1.2em;
   background: linear-gradient(135deg, #ed0b96 0%,#9a00e2 100% 100%,rgba(0,36,0,1) 100%);
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}

@@ -11,10 +11,13 @@
     <form class="center" action="/events/{{event._id}}" method="post">
       <div class="field other">
       {{#each event.players}}
-      <img class="player" src="{{imageUrl}}" alt="{{username}} image">
+        <a href="/profile/{{_id}}"><img class="player" src="{{imageUrl}}" alt="{{username}} image"></a>
       {{/each}}
+      {{#times rest}}
+        <button class="join">+</button>
+      {{/times}}
       </div>
-      <button class="join">JOIN</button>
+
     </form>
     <form class="center" action="/events/{{event._id}}/delete" method="post">
       <button class="join">UNJOIN</button>

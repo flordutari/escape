@@ -47,7 +47,8 @@ router.get('/:id', requireUser, async (req, res, next) => {
   const { id } = req.params;
   try {
     const event = await Event.findById(id).populate('creator escapeRoom players');
-    res.render('events/detail', { event });
+    const rest = event.escapeRoom.capacity.maxPlayers - event.players.length;
+    res.render('events/detail', { event, rest });
   } catch (error) {
     next(error);
   }
@@ -60,10 +61,9 @@ router.post('/:id', requireUser, async (req, res, next) => {
   try {
     if (event.players.length < event.escapeRoom.capacity.maxPlayers) {
       await Event.findByIdAndUpdate(id, { $push: { 'players': { _id } } });
-      res.redirect('/events/' + id);
-    } else {
-      res.redirect('/events/' + id);
+      console.log(event.players);
     }
+    res.redirect('/events/' + id);
   } catch (error) {
     next(error);
   }

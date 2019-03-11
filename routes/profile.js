@@ -10,21 +10,31 @@ const parser = require('../helpers/file-upload');
 
 module.exports = router;
 
-router.get('/', requireUser, async (req, res, next) => {
+router.get('/edit', requireUser, async (req, res, next) => {
   const { _id } = req.session.currentUser;
   try {
     const user = await User.findById(_id);
-    res.render('profile/profile', { _id, user });
+    res.render('profile/edit', { user });
   } catch (error) {
     next(error);
   }
 });
 
-router.get('/edit', requireUser, async (req, res, next) => {
+router.get('/', requireUser, async (req, res, next) => {
   const { _id } = req.session.currentUser;
   try {
     const user = await User.findById(_id);
-    res.render('profile/edit', { _id, user });
+    res.render('profile/profile', { user });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/:id', requireUser, async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findById(id);
+    res.render('profile/profile', { user });
   } catch (error) {
     next(error);
   }
@@ -40,7 +50,8 @@ router.post('/edit', requireUser, parser.single('image'), async (req, res, next)
   };
   console.log(imageUrl);
   try {
-    await User.findByIdAndUpdate(_id, user);
+    const updatedUser = await User.findByIdAndUpdate(_id, user, { new: true });
+    req.session.currentUser = updatedUser;
     console.log({ _id }, user);
     res.redirect('/profile');
   } catch (error) {

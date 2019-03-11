@@ -44,6 +44,13 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
+hbs.registerHelper('times', (n, block) => {
+  var accum = '';
+  for (var i = 0; i < n; ++i) {
+    accum += block.fn(i);
+  };
+  return accum;
+});
 
 app.use(logger('dev'));
 app.use(express.json());
