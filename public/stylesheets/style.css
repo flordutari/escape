@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   font: 14px 'Montserrat', Helvetica, Arial, sans-serif;
   color: #fafafa;
   display: flex;
@@ -11,6 +11,8 @@ body {
 h1 {
   margin: 0 0 10px 0;
   font-weight: 900;
+  font-size: 1.7em;
+  align-self: center;
 }
 
 li {
@@ -23,12 +25,12 @@ img {
 }
 
 nav {
-height: 8vh;
-width: 100%;
-position: absolute;
-background-color: #212636;
-color: #fafafa;
-display: flex;
+  height: 8vh;
+  width: 100%;
+  position: absolute;
+  background-color: #212636;
+  color: #fafafa;
+  display: flex;
 }
 
 .nav-bar {
@@ -37,7 +39,7 @@ display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .profile {
@@ -46,7 +48,7 @@ display: flex;
 }
 
 #def-prof {
-  margin: 0 10px;
+  margin: 0 15px;
   height: 6vh;
   width: default;
 }
@@ -81,7 +83,7 @@ display: flex;
 
 .field label {
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 1.2em;
 }
 
 .field button, button.join {
@@ -91,9 +93,25 @@ display: flex;
   border-radius: 25px;
   height: 50px;
   width: 150px;
-  background: linear-gradient(135deg, rgba(237,11,124,1) 0%,rgba(124,0,226,1) 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(135deg, #edb80b 0%,#e24800 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color:  #fafafa;
-  font-size: 20px;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  outline: none;
+  align-self: center;
+}
+
+a.join {
+  margin-top: 25px;
+  padding: 0;
+  border: none;
+  border-radius: 15px;
+  height: 25px;
+  width: 150px;
+  background: linear-gradient(135deg, #edb80b 0%,#e24800 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color:  #fafafa;
+  font-size: 1em;
   font-weight: 600;
   font-family: 'Montserrat';
   outline: none;
@@ -104,21 +122,22 @@ button.logout {
   background-color:  #212636;
   border: none;
   color:  #fafafa;
-  font-size: 14px;
+  font-size: 1.3em;
   font-weight: 600;
   font-family: 'Montserrat';
   outline: none;
-  margin-left: 80px;
+  text-transform: uppercase;
+  padding: 10px 0;
 }
 
-input {
+input, select {
   height: 40px;
   border: none;
   border-radius: 20px;
   width: 200px;
   outline: none;
   padding: 0 20px;
-  font-size: 16px;
+  font-size: 1.1em;
 }
 
 ul.validation {
@@ -128,7 +147,8 @@ ul.validation {
 
 .events-list{
   width: 100%;
-  background-color: #453750;
+  background-color: #3f3844;
+  min-height: 100vh;
 }
 
 .events h1 {
@@ -140,6 +160,7 @@ ul.validation {
   color:  #fafafa;
   margin: 8vh 20px;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .events ul {
@@ -160,7 +181,7 @@ ul.validation {
 
 .events p:first-of-type {
   margin: 8px 0;
-  color: #ed0b7c;
+  align-self: center;
 }
 
 .events img {
@@ -170,7 +191,7 @@ ul.validation {
 
 .name {
   font-weight: 700;
-  font-size: 17px;
+  font-size: 1em;
 }
 
 div.escapes-link {
@@ -184,7 +205,6 @@ div.escapes-link {
   position: fixed;
   left: 0px;
   bottom: 0px;
-  height: vh;
   width: 100%;
 }
 
@@ -193,14 +213,14 @@ div.escapes-link {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 1.5em;
   align-self: center;
 }
 
 a.join {
   text-transform: uppercase;
   background: #ed0b7c; /* Old browsers */
-  background: linear-gradient(135deg, #ed0b7c 0%,#7c00e2 100%,rgba(0,36,0,1) 100%);
+  background: linear-gradient(135deg, #edb80b 0%,#e24800 100%,rgba(0,36,0,1) 100%);
   text-decoration: none;
   color: #fafafa;
   width: auto;
@@ -211,14 +231,8 @@ a.join {
   margin-top: 10px;
 }
 
-div.arrow {
-  border-bottom: 2px solid #fafafa;
-  border-right: 2px solid #fafafa;
-  width: 18px;
-  height: 15px;
-  transform: rotate(135deg);
-  margin-left: 25px;
-  align-self: center;
+.description {
+  font-weight: lighter;
 }
 
 hr {
@@ -231,6 +245,7 @@ hr {
 
 .events p {
   margin: 0;
+  align-self: center;
 }
 
 img.player {
@@ -240,6 +255,9 @@ img.player {
 
 img.detail {
   width: 100%;
+  height: 150px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 div.other {
@@ -251,4 +269,106 @@ div.other {
 form.center {
   display: flex;
   flex-direction: column;
+}
+
+#menuToggle {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: flex;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#menuToggle span {
+  display: flex;
+  width: 29px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #fafafa;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 5px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-3px, -1px);
+  background: #fafafa;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 375px;
+  height: 150px;
+  margin: -50px 0 0 -50px;
+  padding: 75px;
+  padding-top: 100px;
+  background-color: #212636;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li {
+  padding: 10px 0;
+  transition-delay: 2s;
+  margin: 10px 0;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+#menu a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fafafa;
+  font-weight: 800;
+  font-size: 1.3em;
+}
+
+.create {
+  margin-top: 100px;
+}
+
+#footer {
+  font-size: 1.2em;
+  background: linear-gradient(135deg, #edb80b 0%,#e24800 100%,rgba(0,36,0,1) 100%);
 }

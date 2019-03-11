@@ -1,28 +1,12 @@
 <div class="events-list">
-  <nav>
-    <div class="arrow"><a href="/events/list"></a></div>
-    {{#if currentUser}}
-      <div class="nav-bar">
-        <form action="/auth/logout" method="POST">
-          <button class="logout" type="submit">Logout</button>
-        </form>
-        <div class="profile">
-          <p>{{currentUser.username}}</p>
-          <img id="def-prof" src="{{currentUser.imageUrl}}" alt="{{currentUser.username}} image">  
-        </div>
-      </div>
-    {{else}}
-      <a href="/auth/signup">Signup</a>
-      <a href="/auth/login">Login</a>
-    {{/if}}
-  </nav>
+  {{> navbar}}
   <div class="events">
-    <h1>Escape room Detail</h1>
-
-    <img src="{{escapeRoom.image}}" alt="{{escapeRoom.name}} image">
+    <h1>ESCAPE ROOM</h1>
+    <hr>
+    <img class="detail" src="{{escapeRoom.image}}" alt="{{escapeRoom.name}} image">
     <h3>{{escapeRoom.name}}</h3>
     <div>
-      <p>{{escapeRoom.description}}</p>
+      <p class="description">{{escapeRoom.description}}</p>
       <p>Dificulty : {{escapeRoom.dificulty}}</p>
       <p>Capacity : {{escapeRoom.capacity.maxPlayers}}</p>
       <p>Duration : {{escapeRoom.duration}} min</p>
@@ -31,6 +15,6 @@
       <p>Days : {{escapeRoom.schedule.days}}</p>
       <p>Showtime : {{escapeRoom.schedule.showtime}}</p>
     </div>
-    <a class="join" href="/events/{{escapeRoom.id}}/create">Create event</a>
+    <a class="join" href="/events/{{escapeRoom.id}}/create">NEW</a>
   </div>
 </div>

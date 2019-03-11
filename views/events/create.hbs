@@ -1,45 +1,33 @@
 <div class="events-list">
-  <nav>
-    <div class="arrow"><a href="/events/list"></a></div>
-    {{#if currentUser}}
-      <div class="nav-bar">
-        <form action="/auth/logout" method="POST">
-          <button class="logout" type="submit">Logout</button>
-        </form>
-        <div class="profile">
-          <p>{{currentUser.username}}</p>
-          <img id="def-prof" src="{{currentUser.imageUrl}}" alt="{{currentUser.username}} image">  
+  {{> navbar}}
+  <div class="events">
+    <h1>NEW EVENT</h1>
+    <hr>
+    <div class="create">
+      <form action="/events/list" method="POST">
+
+        <div class="field">
+          <label>Showtime</label>
+          <select id="time-select" name="showtime" value="{{showtime}}">
+            <option value="17:00">17:00</option>
+            <option value="18:30">18:30</option>
+            <option value="20:00">20:00</option>
+            <option value="21:30">21:30</option>
+            <option value="23:00">23:00</option>
+          </select>
         </div>
-      </div>
-    {{else}}
-      <a href="/auth/signup">Signup</a>
-      <a href="/auth/login">Login</a>
-    {{/if}}
-  </nav>
-  <h1>Create event</h1>
 
-  <form action="/events/list" method="POST">
+        <div class="field">
+          <label>Date</label>
+          <input type="date" name="date" value="{{date}}"/>
+        </div>
 
-    <div class="field" >
-      <label>Showtime</label>
-      <select id="time-select" name="showtime" value="{{showtime}}">
-        <option value="17:00">17:00</option>
-        <option value="18:30">18:30</option>
-        <option value="20:00">20:00</option>
-        <option value="21:30">21:30</option>
-        <option value="23:00">23:00</option>
-      </select>
+        <input type="hidden" name="escapeRoom" value="{{id}}"/>
+        
+        <div class="field submit">
+          <button type="submit">SAVE</button>
+        </div>
+      </form>
     </div>
-
-    <div class="field">
-      <label>Date</label>
-      <input type="date" name="date" value="{{date}}"/>
-    </div>
-
-    <input type="hidden" name="escapeRoom" value="{{id}}"/>
-    
-    <div class="field submit">
-      <button type="submit">Save</button>
-    </div>
-  </form>
+  </div>
 </div>

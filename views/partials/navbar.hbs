@@ -1,0 +1,19 @@
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    <ul id="menu">
+      <li><a href="/escape/list">Escape Rooms</a></li>
+      <li><a href="/events/list">Events</a></li>
+      <form action="/auth/logout" method="POST">
+          <button class="logout" type="submit">Logout</button>
+      </form>
+    </ul>
+  </div>
+  <div class="profile nav-bar">
+    <p>{{currentUser.username}}</p>
+    <img id="def-prof" src="{{currentUser.imageUrl}}" alt="{{currentUser.username}} image">  
+  </div>
+</nav>
