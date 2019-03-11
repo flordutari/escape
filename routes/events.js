@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const moment = require('moment');
 const Event = require('../models/Event');
 
-const { requireUser } = require('../middlewares/index');
+const { requireUser, requireFields } = require('../middlewares/index');
 
 /* GET users listing. */
 
@@ -19,13 +19,16 @@ router.get('/list', requireUser, async (req, res, next) => {
 });
 
 router.get('/:id/create', requireUser, (req, res, next) => {
+  const dato = {
+    messages: req.flash('check')
+  };
   const { id } = req.params;
   const { _id } = req.session.currentUser;
 
-  res.render('events/create', { id, _id });
+  res.render('events/create', { id, _id, dato });
 });
 
-router.post('/list', requireUser, async (req, res, next) => {
+router.post('/:id/create', requireFields, requireUser, async (req, res, next) => {
   const { escapeRoom, showtime, inputDate } = req.body;
   const date = moment(new Date(`${inputDate}`)).format('ll');
   const event = {
@@ -61,7 +64,6 @@ router.post('/:id', requireUser, async (req, res, next) => {
   try {
     if (event.players.length < event.escapeRoom.capacity.maxPlayers) {
       await Event.findByIdAndUpdate(id, { $push: { 'players': { _id } } });
-      console.log(event.players);
     }
     res.redirect('/events/' + id);
   } catch (error) {

@@ -48,11 +48,9 @@ router.post('/edit', requireUser, parser.single('image'), async (req, res, next)
     description,
     imageUrl: req.file.url
   };
-  console.log(imageUrl);
   try {
     const updatedUser = await User.findByIdAndUpdate(_id, user, { new: true });
     req.session.currentUser = updatedUser;
-    console.log({ _id }, user);
     res.redirect('/profile');
   } catch (error) {
     next(error);
