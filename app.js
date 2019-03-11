@@ -14,6 +14,7 @@ const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const escapeRouter = require('./routes/escape');
 const eventsRouter = require('./routes/events');
+const profileRouter = require('./routes/profile');
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/escape', escapeRouter);
 app.use('/events', eventsRouter);
+app.use('/profile', profileRouter);
 
 // -- 404 and error handler
 

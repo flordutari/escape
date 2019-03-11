@@ -6,6 +6,7 @@ body {
   color: #fafafa;
   display: flex;
   flex-direction: column;
+  background-color: grey;
 }
 
 h1 {
@@ -18,6 +19,11 @@ h1 {
 li {
   list-style: none;
 }
+
+/* img {
+  width:70vw;
+  height: auto;
+} */
 
 nav {
   height: 8vh;
@@ -40,6 +46,11 @@ nav {
 .profile {
   display: flex;
   flex-direction: row;
+}
+
+#profile img{
+width: 70vw;
+height: auto;
 }
 
 #def-prof {
