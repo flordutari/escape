@@ -19,11 +19,6 @@ li {
   list-style: none;
 }
 
-img {
-  width:70vw;
-  height: auto;
-}
-
 nav {
   height: 8vh;
   width: 100%;
@@ -50,7 +45,7 @@ nav {
 #def-prof {
   margin: 0 15px;
   height: 6vh;
-  width: default;
+  width: auto;
 }
 
 .login a {
@@ -93,7 +88,7 @@ nav {
   border-radius: 25px;
   height: 50px;
   width: 150px;
-  background: linear-gradient(135deg, #edb80b 0%,#e24800 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(135deg, #ed0b96 0%,#9a00e2 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color:  #fafafa;
   font-size: 1.4em;
   font-weight: 600;
@@ -109,7 +104,7 @@ a.join {
   border-radius: 15px;
   height: 25px;
   width: 150px;
-  background: linear-gradient(135deg, #edb80b 0%,#e24800 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(135deg, #ed0b96 0%,#9a00e2 100% 100%,rgba(0,36,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color:  #fafafa;
   font-size: 1em;
   font-weight: 600;
@@ -220,7 +215,7 @@ div.escapes-link {
 a.join {
   text-transform: uppercase;
   background: #ed0b7c; /* Old browsers */
-  background: linear-gradient(135deg, #edb80b 0%,#e24800 100%,rgba(0,36,0,1) 100%);
+  background: linear-gradient(135deg, #ed0b96 0%,#9a00e2 100% 100%,rgba(0,36,0,1) 100%);
   text-decoration: none;
   color: #fafafa;
   width: auto;
@@ -250,6 +245,7 @@ hr {
 
 img.player {
   width: 30%;
+  height: auto;
   margin: 5px;
 }
 
@@ -370,5 +366,5 @@ form.center {
 
 #footer {
   font-size: 1.2em;
-  background: linear-gradient(135deg, #edb80b 0%,#e24800 100%,rgba(0,36,0,1) 100%);
+  background: linear-gradient(135deg, #ed0b96 0%,#9a00e2 100% 100%,rgba(0,36,0,1) 100%);
 }
