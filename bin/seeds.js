@@ -159,10 +159,10 @@ const escapeRooms = [
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://trainingroombcn.com/images/light-logo2.png',
     image: 'https://www.escaperoomlover.com/storage/files/pxiw0CJa1513097737.3111.jpg'
-  },
+  }
 ];
 
-mongoose.connect('mongodb://localhost/escape', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
