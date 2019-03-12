@@ -32,16 +32,27 @@ router.get('/', requireUser, async (req, res, next) => {
 
 router.get('/:id', requireUser, async (req, res, next) => {
   const { id } = req.params;
+  const { _id } = req.session.currentUser;
   try {
-    const user = await User.findById(id);
-    res.render('profile/profile', { user });
+    const user = await User.findById(id).populate({
+      path: 'myEvents',
+      populate: {
+        path: 'escapeRoom',
+        model: 'EscapeRoom' }
+    });
+
+    let isOwnProfile = false;
+    if (user._id.equals(_id)) {
+      isOwnProfile = true;
+    }
+    res.render('profile/profile', { user, isOwnProfile });
   } catch (error) {
     next(error);
   }
 });
 
 router.post('/edit', requireUser, parser.single('image'), async (req, res, next) => {
-  const { username, description, imageUrl } = req.body;
+  const { username, description } = req.body;
   const { _id } = req.session.currentUser;
   const user = {
     username,

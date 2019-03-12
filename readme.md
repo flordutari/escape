@@ -29,9 +29,6 @@ User profile:
 - search filters
 - add friends to the event
 
-<!-- - 
-- **profile** - As a user I want to edit my profile  and see others profile so I know which I will play with. -->
-
 Geo Location:
 - add geolocation to events when creating
 - show event in a map in event detail page
