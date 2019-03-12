@@ -14,7 +14,7 @@ const escapeRooms = [
     location: '41.356467, 2.071869',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/cropped-careta_missionleak-1.png',
-    image: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/flor-thaqar.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338112/project_2_images/dollars.png'
   },
   {
     name: 'Wolf',
@@ -26,7 +26,7 @@ const escapeRooms = [
     location: '41.351964, 2.087888',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/cropped-careta_missionleak-1.png',
-    image: 'http://www.missionleak.com/web/wp-content/uploads/2018/10/wolf_escape_room.png'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338113/project_2_images/wolf.png'
   },
   {
     name: 'Enigma Puccini',
@@ -38,7 +38,7 @@ const escapeRooms = [
     location: '41.380204, 2.173294',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/cropped-careta_missionleak-1.png',
-    image: 'http://www.missionleak.com/web/wp-content/uploads/2018/06/enigma-puccini.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338112/project_2_images/enigma.png'
   },
   {
     name: '60\'ESCAPE',
@@ -50,7 +50,7 @@ const escapeRooms = [
     location: '41.375837, 2.157793',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'https://60escape.es/wp-content/uploads/2017/01/escape-white-logo.png',
-    image: 'https://60escape.es/wp-content/uploads/2014/09/les-infiltr%C3%A9s-escape-1.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338112/project_2_images/luzsombra.png'
   },
   {
     name: 'La Mina',
@@ -62,7 +62,7 @@ const escapeRooms = [
     location: '41.362193, 2.129101',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'https://unrealroomescape.es/wp-content/uploads/2018/06/cropped-unreal-room-escape-barcelona.png',
-    image: 'http://unrealroomescape.es/irun/wp-content/uploads/2014/06/lamina-1.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338112/project_2_images/lamina.png'
   },
   {
     name: 'Misión S.W.A.T',
@@ -74,7 +74,7 @@ const escapeRooms = [
     location: '41.365037, 2.077612',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'https://openmindroomescape.es/wp-content/uploads/2017/01/room-escape-cornella-barcelona.jpg',
-    image: 'https://openmindroomescape.es/wp-content/uploads/2014/05/room-escape-mision-swat.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338113/project_2_images/swat.png'
   },
   {
     name: 'El último Safardí',
@@ -86,7 +86,7 @@ const escapeRooms = [
     location: '41.363295, 2.124950',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://hospitalet.salaenigma.com/wp-content/uploads/2015/06/top-web-35x35.png',
-    image: 'http://www.salaenigma.com/wp-content/uploads/2017/04/Sala-Enigma-Room-Escape-Hospitalet-II-555x290.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338118/project_2_images/mapa.png'
   },
   {
     name: 'DIA D',
@@ -98,7 +98,7 @@ const escapeRooms = [
     location: '41.362636, 2.099698',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'https://diadroomescape.com/assets/imgs/Logotipo_dia_d.png',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoQ4C6MDt-ilWVjR8TwjmTJCgLbVp3XJAsO-BlvbXMaOCHpTV'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338111/project_2_images/diad.png'
   },
   {
     name: 'Comecocos',
@@ -110,7 +110,7 @@ const escapeRooms = [
     location: '41.362724, 2.106513',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'https://www.comecocosescaperoom.com/wp-content/uploads/2017/08/logo.png',
-    image: 'https://www.room-escapers.com/wp-content/uploads/2017/12/comecocos.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338111/project_2_images/comecocos.png'
   },
   {
     name: 'The Mansion',
@@ -122,7 +122,7 @@ const escapeRooms = [
     location: '41.360757, 2.099174',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'https://www.l-hescaperoom.com/wp-content/uploads/2017/07/logo.png',
-    image: 'https://pbs.twimg.com/media/DnSPJuwXcAAPiup.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338113/project_2_images/secret.png'
   },
   {
     name: 'Kessler Galimary',
@@ -134,7 +134,7 @@ const escapeRooms = [
     location: '41.375499, 2.137861',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://room-escape.cat/wp-content/uploads/2016/11/logo-room-escape-horizontal-4.png',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ39aFraFWGS5e048nsW3bCXfj8DzyGl_bTemfw8wyEJH0q6CvW'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338112/project_2_images/galimany.png'
   },
   {
     name: 'Prision',
@@ -146,7 +146,7 @@ const escapeRooms = [
     location: '41.376292, 2.158012',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'https://d2clrhemorntkp.cloudfront.net/assets/images/logo.svg',
-    image: 'https://www.virginexperiencedays.co.uk/content/img/product/large/trapped-in-a-prison-16090707.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338112/project_2_images/carcel.png'
   },
   {
     name: 'Training Room',
@@ -158,11 +158,11 @@ const escapeRooms = [
     location: '41.376841, 2.135292',
     schedule: { days: 'de Lunes a Domingo', showtime: ['17:00', ' 18:30', ' 20:00', ' 21:30', ' 23:00'] },
     icon: 'http://trainingroombcn.com/images/light-logo2.png',
-    image: 'https://www.escaperoomlover.com/storage/files/pxiw0CJa1513097737.3111.jpg'
+    image: 'https://res.cloudinary.com/drkujr1xv/image/upload/v1552338113/project_2_images/training.png'
   }
 ];
 
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect('mongodb://localhost/escape', {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE

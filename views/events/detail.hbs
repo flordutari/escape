@@ -14,10 +14,9 @@
         <a href="/profile/{{_id}}"><img class="player" src="{{imageUrl}}" alt="{{username}} image"></a>
       {{/each}}
       {{#times rest}}
-        <button class="join">+</button>
+        <button id="default-img"><img class="player" src="https://res.cloudinary.com/drkujr1xv/image/upload/v1552346612/project_2_images/default.png" alt="default image"></button>
       {{/times}}
       </div>
-
     </form>
     <form class="center" action="/events/{{event._id}}/delete" method="post">
       <button class="join">UNJOIN</button>
