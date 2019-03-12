@@ -162,7 +162,13 @@ const escapeRooms = [
   }
 ];
 
-mongoose.connect('mongodb://localhost/escape', {
+// mongoose.connect('mongodb://localhost/escape', {
+//   keepAlive: true,
+//   useNewUrlParser: true,
+//   reconnectTries: Number.MAX_VALUE
+// });
+
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE

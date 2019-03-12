@@ -266,12 +266,16 @@ div.other {
   flex-wrap: wrap;
 }
 
+a, li {
+  text-align: center;
+}
+
 form.center {
   display: flex;
   flex-direction: column;
 }
 
-#menuToggle {
+#menu-toggle {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -282,7 +286,7 @@ form.center {
   user-select: none;
 }
 
-#menuToggle input {
+#menu-toggle input {
   display: flex;
   width: 40px;
   height: 32px;
@@ -292,7 +296,7 @@ form.center {
   z-index: 2;
 }
 
-#menuToggle span {
+#menu-toggle span {
   display: flex;
   width: 29px;
   height: 2px;
@@ -307,27 +311,27 @@ form.center {
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child {
+#menu-toggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
+#menu-toggle span:nth-last-child(2)
 {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span {
+#menu-toggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-3px, -1px);
   background: #fafafa;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3) {
+#menu-toggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
+#menu-toggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
@@ -355,7 +359,7 @@ form.center {
   margin: 20px 0;
 }
 
-#menuToggle input:checked ~ ul {
+#menu-toggle input:checked ~ ul {
   transform: none;
 }
 
