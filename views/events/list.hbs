@@ -1,18 +1,33 @@
 <div class="events-list">
   {{> navbar}}
   <div class="events escape-rooms">
-    <h1>EVENTS</h1>
+    <div class="title">
+      <h1>EVENTS</h1>
+      <hr>
+    </div>
     <ul class="list">
       {{#each events}}
         <li class="escape-rooms">
-          <div>
+          <div class="image">
             <a href="/events/{{this._id}}"><img src="{{this.escapeRoom.image}}" alt="{{this.escapeRoom.name}} image"></a>
           </div>
           <div id="pes">
-            <p class="name">{{this.escapeRoom.name}}</p>
-            <p class="details">{{this.date}}</p>
-            <p class="details">{{this.showtime}}</p>
-            <p class="details">{{this.creator.username}}</p>
+            <div class="p">
+              
+              <p class="name">{{this.escapeRoom.name}}</p>
+            </div>
+            <div class="p">
+              <i class="fas fa-user-ninja"></i>
+              <p class="details">{{this.date}}</p>
+            </div>
+            <div class="p">
+              <i class="fas fa-user-ninja"></i>
+              <p class="details">{{this.showtime}}</p>
+            </div>
+            <div class="p">
+              <i class="fas fa-user-ninja"></i>
+              <p class="details">{{this.creator.username}}</p>
+            </div>
           </div>
         </li>
       {{/each}}
