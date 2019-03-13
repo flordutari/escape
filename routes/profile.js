@@ -66,7 +66,7 @@ router.post('/edit', requireUser, parser.single('image'), async (req, res, next)
   }
   try {
     if (!username || !description) {
-      req.flash('check-edit', 'you need a Name and a Descritpopn');
+      req.flash('check-edit', 'You need a Name and description');
       res.redirect('/profile/edit');
       return;
     }
