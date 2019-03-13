@@ -174,6 +174,12 @@ mongoose.connect(process.env.MONGODB_URI, {
   reconnectTries: Number.MAX_VALUE
 });
 
+mongoose.connect('mongodb://localhost/escape', {
+  keepAlive: true,
+  useNewUrlParser: true,
+  reconnectTries: Number.MAX_VALUE
+});
+
 EscapeRoom.insertMany(escapeRooms)
   .then(result => {
     console.log(result);

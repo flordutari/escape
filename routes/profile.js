@@ -12,9 +12,12 @@ module.exports = router;
 
 router.get('/edit', requireUser, async (req, res, next) => {
   const { _id } = req.session.currentUser;
+  const data = {
+    messages: req.flash('check-edit')
+  };
   try {
     const user = await User.findById(_id);
-    res.render('profile/edit', { user });
+    res.render('profile/edit', { user, data });
   } catch (error) {
     next(error);
   }
@@ -56,13 +59,21 @@ router.post('/edit', requireUser, parser.single('image'), async (req, res, next)
   const { _id } = req.session.currentUser;
   const user = {
     username,
-    description,
-    imageUrl: req.file.url
+    description
   };
+  if (req.file) {
+    user.imageUrl = req.file.url;
+  }
   try {
+    if (!username || !description) {
+      req.flash('check-edit', 'you need a Name and a Descritpopn');
+      res.redirect('/profile/edit');
+      return;
+    }
+    console.log(user.username, user.description);
     const updatedUser = await User.findByIdAndUpdate(_id, user, { new: true });
     req.session.currentUser = updatedUser;
-    res.redirect('/profile');
+    res.redirect('/profile/' + _id);
   } catch (error) {
     next(error);
   }
