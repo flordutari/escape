@@ -112,7 +112,7 @@ nav {
 }
 
 div.nav-bar {
-  width: 30%;
+  width: auto;
 }
 
 .escape-room-logo {
