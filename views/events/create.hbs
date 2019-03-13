@@ -2,7 +2,6 @@
   {{> navbar}}
   <div class="events">
     <h1>NEW EVENT</h1>
-    <hr>
     <div class="create">
       <form action="/events/{{id}}/create" method="POST">
 
@@ -25,7 +24,7 @@
         <input type="hidden" name="escapeRoom" value="{{id}}"/>
         
         <div class="field submit">
-          <button type="submit">SAVE</button>
+          <button class="join" type="submit">SAVE</button>
         </div>
       </form>
       {{> flash2}}

@@ -1,14 +1,13 @@
 <div class="events-list">
   {{> navbar}}
-  <div class="events">
+  <div class="events escape-rooms">
     <h1>ESCAPE ROOMS</h1>
-    <hr>
     <ul>
       {{#each escapeRoom}}
-        <li>
+        <li class="escape-rooms">
           <img src="{{this.image}}" alt="{{this.name}}">
-          <p class="name">{{this.name}}</p>
-          <a class="join" href="/escape/{{this._id}}">NEW</a>
+          <h2 class="name">{{this.name}}</h2>
+          <a class="new new-list" href="/escape/{{this._id}}">SEE MORE</a>
         </li>
       {{/each}}
     </ul>

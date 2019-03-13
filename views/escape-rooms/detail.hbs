@@ -2,19 +2,17 @@
   {{> navbar}}
   <div class="events">
     <h1>ESCAPE ROOM</h1>
-    <hr>
     <img class="detail" src="{{escapeRoom.image}}" alt="{{escapeRoom.name}} image">
     <h3>{{escapeRoom.name}}</h3>
     <div>
       <p class="description">{{escapeRoom.description}}</p>
-      <p>Dificulty : {{escapeRoom.dificulty}}</p>
-      <p>Capacity : {{escapeRoom.capacity.maxPlayers}}</p>
-      <p>Duration : {{escapeRoom.duration}} min</p>
-      <p>Direction : {{escapeRoom.direction}}</p>
-      <p>Schedule : </p>
-      <p>Days : {{escapeRoom.schedule.days}}</p>
-      <p>Showtime : {{escapeRoom.schedule.showtime}}</p>
+      <p>DIFICULTY: {{escapeRoom.dificulty}}</p>
+      <p>CAPACITY: {{escapeRoom.capacity.maxPlayers}}</p>
+      <p>DURATION:{{escapeRoom.duration}} min</p>
+      <p>ADRESS: {{escapeRoom.direction}}</p>
+      <p>DAYS: {{escapeRoom.schedule.days}}</p>
+      <p>SHOWTIME:{{escapeRoom.schedule.showtime}}</p>
     </div>
-    <a class="join" href="/events/{{escapeRoom.id}}/create">NEW</a>
+    <a class="new new-detail" href="/events/{{escapeRoom.id}}/create">NEW EVENT</a>
   </div>
 </div>
