@@ -56,10 +56,6 @@ p {
   border: 1px solid white;
 }
 
-.new-list {
-  margin-top: 10px;
-}
-
 .new-detail {
   margin-top: 40px;
 }
@@ -121,10 +117,16 @@ div.nav-bar {
 }
 
 .escape-room-logo {
-  width: 45vw;
+  width: 180px;
   height: auto;
   margin-top: 100px;
   margin-bottom: 40px;
+  animation: PULSE 5s infinite; 
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  color:pink;
+  -webkit-filter: drop-shadow( 0px 0px 30px  rgb(172, 28, 28, 0.5));
+  filter: drop-shadow( 0px 0px 30px  rgba(245, 137, 230, 0.5));
 }
 
 .login-signup {
@@ -155,7 +157,6 @@ button.join {
   border-radius: 25px;
   height: 50px;
   width: 240px;
-  background: linear-gradient(135deg, #ed0b96 0%,#680E4B 100% 100%,rgba(0,36,0,1) 100%);
   color:  #fafafa;
   font-size: 1.4em;
   font-weight: 600;
@@ -175,9 +176,9 @@ li.escape-rooms {
 }
 
 .escape-rooms img {
-  border-radius: 5% 5% 0 0;
-  width: 100%;
-  height: 50%;
+  border-radius: 1.5vh 1.5vh 0 0;
+  width: 40vw;
+  height: 25vh;
   align-self: center;
   overflow: hidden;
   object-fit: cover;
@@ -363,13 +364,14 @@ button.logout {
 }
 
 input, select {
-  height: 50px;
+  height: 40px;
   border: none;
-  border-radius: 25px;
+  border-bottom: 1px solid #fafafa;
   width: 200px;
   outline: none;
   padding: 0 20px;
   font-size: 1.1em;
+  background-color: #262025;
 }
 
 ul.validation, ul.check {
@@ -403,21 +405,20 @@ ul.validation, ul.check {
 
 .events li {
   width: 45%;
+  height: 23vh;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+}
+
+.new-list {
+  margin-bottom: 2vh;
 }
 /* 
 .events p:first-of-type {
   margin: 8px 0;
   align-self: center;
 } */
-
-
-.name {
-  font-weight: 700;
-  font-size: 1em;
-}
 
 div.escapes-link {
   width: 100%;
@@ -451,10 +452,10 @@ div.escapes-link {
 }
 
 .name {
-  margin: 10px 0 15px 0;
+  margin-top: 10px;
   text-transform: uppercase;
   font-size: .85em;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .details {
@@ -601,4 +602,63 @@ form.center {
     -webkit-transform: translateZ(-182px) rotateY(-360deg);
             transform: translateZ(-182px) rotateY(-360deg);
   }
+}
+
+/* ----- ANIMATIONS ----- */
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 1.15, 1.15);
+    transform: scale3d(1.15, 1.15, 1.15);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@-webkit-keyframes pulse2 {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.field button, button.join {
+  margin-top: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 35px;
+  height: 50px;
+  width: 240px;
+  color:  #fafafa;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: 'Raleway';
+  outline: none;
+  align-self: center;
+  animation: pulse2 .6s infinite; 
+  -webkit-animation-name: pulse2;
+  animation-name: pulse2; 
+  background-color:rgba(250, 203, 246, 0.4);
+  border: 5px solid rgb(241, 142, 250);
+  -webkit-box-shadow: 0px 0px 127px 23px rgba(242,164,242,0.39);
+  -moz-box-shadow: 0px 0px 127px 23px rgba(242,164,242,0.39);
+  box-shadow: 0px 0px 127px 23px rgba(242,164,242,0.39);
 }
