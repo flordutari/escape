@@ -2,14 +2,18 @@
   {{> navbar}}
   <div class="events escape-rooms">
     <h1>EVENTS</h1>
-    <ul>
+    <ul class="list">
       {{#each event}}
-        <li class="escape-rooms ev">
-          <a href="/events/{{this._id}}"><img src="{{this.escapeRoom.image}}" alt="{{this.escapeRoom.name}} image"></a>
-          <p class="name">{{this.escapeRoom.name}}</p>
-          <p class="details">{{this.date}}</p>
-          <p class="details">{{this.showtime}}</p>
-          <p class="details">{{this.creator.username}}</p>
+        <li class="escape-rooms">
+          <div>
+            <a href="/events/{{this._id}}"><img src="{{this.escapeRoom.image}}" alt="{{this.escapeRoom.name}} image"></a>
+          </div>
+          <div id="pes">
+            <p class="name">{{this.escapeRoom.name}}</p>
+            <p class="details">{{this.date}}</p>
+            <p class="details">{{this.showtime}}</p>
+            <p class="details">{{this.creator.username}}</p>
+          </div>
         </li>
       {{/each}}
     </ul>
@@ -18,3 +22,20 @@
     <a href="../escape/list">Escape Rooms</a>
   </div>
 </div>
+{{!-- 
+<div class="col s12 m7">
+    <h2 class="header">Horizontal Card</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div> --}}
