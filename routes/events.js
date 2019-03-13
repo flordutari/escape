@@ -71,12 +71,10 @@ router.get('/:id', requireUser, async (req, res, next) => {
 router.post('/:id', requireUser, async (req, res, next) => {
   const eventId = req.params.id;
   const userId = req.session.currentUser._id;
-  const event = await Event.findById(eventId).populate('creator escapeRoom players users');
+  const event = await Event.findById(eventId).populate('players escapeRoom');
   let notAlreadyIn = true;
-  console.log(event.players.id);
-  event.players.filter((user) => {
-    if (user._id === userId) {
-      console.log(user._id);
+  event.players.map((a) => {
+    if (a._id.equals(userId)) {
       notAlreadyIn = false;
     }
   });
