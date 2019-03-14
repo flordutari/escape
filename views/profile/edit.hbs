@@ -2,7 +2,7 @@
   {{> navbar}}
   <div id="profile" class="login events edit">
     <h1>{{user.username}}'s profile</h1>
-    <form class="center" action="/profile/edit" method="POST" enctype="multipart/form-data">
+    <form class="center-edit" action="/profile/edit" method="POST" enctype="multipart/form-data">
       <div>
         <img id="profile-img" src="{{user.imageUrl}}" alt="">
         <label>Your image</label>

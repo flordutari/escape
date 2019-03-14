@@ -394,16 +394,23 @@ a {
 .edit input>button {
   background-color: #262025;
   color: #fafafa;
+  align-items: center;
 }
 
-.center div {
+form.center-edit {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.center-edit div {
   display: flex;
   align-self: center;
   flex-direction: column;
   text-align: center;
 }
 
-.center label {
+.center-edit label {
   margin: 15px;
 }
 
