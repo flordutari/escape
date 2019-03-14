@@ -73,7 +73,7 @@ router.get('/:id', requireUser, async (req, res, next) => {
         isAlreadyIn = true;
       }
     });
-    res.render('events/detail', { event, rest, isOwnProfile, isAlreadyIn });
+    res.render('events/detail', { event, rest, isOwnProfile, isAlreadyIn, eventId });
   } catch (error) {
     next(error);
   }
@@ -126,10 +126,22 @@ router.post('/:id/comment', requireUser, async (req, res, next) => {
   }
 });
 
-router.post('/:id/delete', requireUser, async (req, res, next) => {
-  const { id } = req.params;
+router.post('/:id/delete-comment', requireUser, async (req, res, next) => {
+  const eventId = req.params.id;
+  const { commentId } = req.body;
   try {
-    await Event.findByIdAndDelete(id);
+    const event = Event.findById(eventId).populate('comments');
+    const comment = await event.comments.findByIdAndDelete(commentId);
+    res.redirect('/events/' + eventId);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/:id/delete', requireUser, async (req, res, next) => {
+  const eventId = req.params.id;
+  try {
+    await Event.findByIdAndDelete(eventId);
     res.redirect('/events/list');
   } catch (error) {
     next(error);

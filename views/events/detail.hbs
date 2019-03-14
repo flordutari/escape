@@ -8,7 +8,7 @@
     <p>{{event.date}}</p>
     <p>{{event.showtime}}</p>
     <p>{{event.players.0.username}}</p>
-    <form class="center" action="/events/{{event._id}}" method="post">
+    <form class="center" action="/events/{{event._id}}" method="POST">
       <div class="field other">
       {{#each event.players}}
         <a href="/profile/{{_id}}"><img class="player" src="{{imageUrl}}" alt="{{username}} image"></a>
@@ -18,11 +18,11 @@
       {{/times}}
       </div>
     </form>
-    <form class="center" action="/events/{{event._id}}/unjoin" method="post">
+    <form class="center" action="/events/{{event._id}}/unjoin" method="POST">
       <button class="join">UNJOIN</button>
     </form>
     {{#if isOwnProfile}}
-    <form class="center" action="/events/{{event._id}}/delete" method="post">
+    <form class="center" action="/events/{{event._id}}/delete" method="POST">
       <button class="join">DELETE</button>
     </form>
     {{/if}}
@@ -31,6 +31,12 @@
     {{#each event.comments}}
       <p>{{this.comment}}</p>
       <p>{{this.creator.username}}</p>
+      <input type="text" name="commentId" value="{{this._id}}">
+      {{!-- {{#if isOwnComment}} --}}
+      <form class="center" action="/events/{{eventId}}/delete-comment" method="POST">
+        <button>DELETE</button>
+      </form>
+      {{!-- {{/if}} --}}
     {{/each}}
   </div>
   {{#if isAlreadyIn}}
