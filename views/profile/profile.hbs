@@ -1,21 +1,28 @@
 <div class="events-list">
   {{> navbar}}
   <div id="profile" class="events">
-    <a href="/">homepage</a>
     <h1>{{user.username}}'s profile</h1>
     <img id="profile-img" src="{{user.imageUrl}}" alt="user image">
-    <p>{{user.description}}</p>
+    <p id="description">"{{user.description}}"</p>
     {{#if isOwnProfile}}
-    <a href="/profile/edit">Edit profile</a>
+    <a href="/profile/edit"><i class="far fa-edit"></i></a>
     {{/if}}
-    <figure class="icon-cards">
-      <div class="icon-cards__content">
-          {{#each user.myEvents}}
-        <div class="icon-cards__item">
-          <a href="/events/{{this.id}}"><img id="joined-events" src="{{this.escapeRoom.image}}"></a>
-        </div>
-          {{/each}}
-      </div>
-    </figure>
+  <div class="slick-carousel">
+    {{#each user.myEvents}}
+    <div class="slide-content" id="wrapper"><a href="/events/{{this.id}}"><img id="joined-events" src="{{this.escapeRoom.image}}"></a></div>
+    {{/each}}
+  </div>
   </div>
 </div>
+
+
+
+{{!-- <figure class="icon-cards">
+  <div class="icon-cards__content">
+      {{#each user.myEvents}}
+    <div class="icon-cards__item">
+      <a href="/events/{{this.id}}"><img id="joined-events" src="{{this.escapeRoom.image}}"></a>
+    </div>
+      {{/each}}
+  </div>
+</figure> --}}

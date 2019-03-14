@@ -68,14 +68,6 @@ router.get('/:id', requireUser, async (req, res, next) => {
       isOwnProfile = true;
     };
 
-    let isOwnComment = false;
-    event.comments.map((a) => {
-      if (a.creator._id.equals(userId)) {
-        isOwnComment = true;
-      }
-    });
-    console.log(isOwnComment);
-
     let isAlreadyIn = false;
     event.players.map((a) => {
       if (a._id.equals(userId)) {
@@ -83,7 +75,7 @@ router.get('/:id', requireUser, async (req, res, next) => {
       }
     });
 
-    res.render('events/detail', { event, rest, isOwnProfile, isAlreadyIn, eventId, isOwnComment });
+    res.render('events/detail', { event, rest, isOwnProfile, isAlreadyIn });
   } catch (error) {
     next(error);
   }

@@ -11,6 +11,7 @@ rgb(241, 142, 250); */
 #262025; */
 
 /* ---- reset ---- */
+@gutters: 10%;
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -348,11 +349,23 @@ a {
   flex-direction: row;
 }
 
+#profile i {
+  color: rgb(241, 142, 250);
+  font-size: 1.2em;
+}
+
 #profile-img {
-  width: 70vw;
-  height: 70vw;
+  width: 50vw;
+  height: 50vw;
   border-radius: 50%;
   object-fit: cover;
+  margin-bottom: 4vh;
+}
+
+#description {
+  font-size: 1.3em;
+  margin-bottom: 1.5vh;
+  text-: 
 }
 
 #def-prof {
@@ -948,4 +961,57 @@ textarea {
   font-family: 'Raleway';
   border: 1px solid rgb(241, 142, 250);
   outline: none;
+}
+
+.slick-slide .slide-content {
+  margin: 0 10%;
+  padding: 20px 20px;
+  background: #262025;
+}
+.slick-list {
+  margin: 20px 0px;
+}
+.slick-prev,
+.slick-next {
+  position: absolute;
+  right: 10%;
+  background: #777;
+  border: none;
+  color: transparent;
+  width: 30px;
+  height: 30px;
+}
+.slick-prev:before,
+.slick-next:before {
+  content: ">";
+  color: #262025;
+  font-size: 25px;
+}
+.slick-prev {
+  left: 10%;
+}
+.slick-prev:before {
+  content: "<";
+}
+.slick-dots {
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+}
+.slick-dots li {
+  display: inline-block;
+}
+.slick-dots li button {
+  transition: 0.2s background-color ease-in-out 0s;
+  border: none;
+  padding: 0;
+  color: transparent;
+  width: 10px;
+  height: 10px;
+  background-color: #777;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.slick-dots li.slick-active button {
+  background-color: #262025;
 }
