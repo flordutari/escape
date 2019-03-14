@@ -48,14 +48,14 @@ p {
 }
 
 /* ---- layout ---- */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .container {
     max-width: 728px;.verticalLine {
       border-left: thick solid #ff0000;
     }
     margin: 0 auto;
   }
-}
+} */
 
 /* ---- components ---- */
 
@@ -426,9 +426,7 @@ ul.validation, ul.check {
 .events {
   display: flex;
   color:  #fafafa;
-  margin: 8
-  
-  vh 20px;
+  margin: 8vh 20px; 
   flex-direction: column;
   min-height: 100vh;
 }
@@ -461,7 +459,7 @@ ul.validation, ul.check {
   background-color: #2e2e2e;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75); */
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75); 
 } 
 
 .events img {
