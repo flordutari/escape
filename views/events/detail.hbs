@@ -52,8 +52,8 @@
             <img id="def-prof" src="{{this.creator.imageUrl}}" alt="{{this.creator.imageUrl}} image">
             <input type="hidden" name="commentId" value="{{this._id}}">
           </div>
-          {{#ifCond ../currentUser._id '==' this.creator._id}}
-            <button>DELETE</button>
+          {{#ifCond ../currentUser._id "==" this.creator._id}}
+            <button id="default-img" class="ancor-button"><i class="far fa-trash-alt"></i></button>
           {{/ifCond}}
         </form>
       {{/each}}
