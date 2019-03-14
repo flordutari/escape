@@ -52,9 +52,9 @@
             <img id="def-prof" src="{{this.creator.imageUrl}}" alt="{{this.creator.imageUrl}} image">
             <input type="hidden" name="commentId" value="{{this._id}}">
           </div>
-          {{#if ../isOwnComment}}
-            <button id="default-img" class="ancor-button"><i class="far fa-trash-alt"></i></button>
-          {{/if}}
+          {{#ifCond ../currentUser._id '==' this.creator._id}}
+            <button>DELETE</button>
+          {{/ifCond}}
         </form>
       {{/each}}
       <form class="comment" action="/events/{{event._id}}/comment" method="POST">
