@@ -543,7 +543,7 @@ ul.validation, ul.check {
   flex-direction: row;
   justify-self: flex-start;
   text-align: start;
-  margin: 1vh 0px;
+  margin: 0.5vh 0px;
 }
 
 #card-content i {
@@ -558,6 +558,26 @@ ul.validation, ul.check {
   text-align: start;
   margin: 1vh ;
 }
+.name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color:rgb(142, 243, 250);
+  text-shadow: 2px 2px 20px rgba(164, 242, 232, 0.575);
+}
+.creator {
+  font-size: 1.2em;
+  font-weight: bold;
+  color:rgb(142, 243, 250);
+  text-shadow: 2px 2px 20px rgba(164, 242, 232, 0.575);
+}
+#laser-card2  {
+  margin: 5px 0 ;
+  border: 1px solid rgb(142, 243, 250);
+  border-radius: 25%;
+  box-shadow: 0px 0px 20px 5px rgba(164, 242, 232, 0.575); 
+}
+
+
 
 
 /* ----- ESCAPE ROOMS LIST ------  */
@@ -668,7 +688,7 @@ ul.validation, ul.check {
 }
 
 #event-detail p {
-  margin: 10px auto auto 0px;
+  margin: 10px auto 10px 0px;
 }
 
 #event-detail i {
@@ -709,18 +729,46 @@ img.player {
 }
 
 #event-detail .flex-row {
-  margin: 20px 0 5px 0;
   justify-content: space-between;
 }
 
 #event-detail .flex-row h3 {
-  margin: 0;
+  margin: 15px 0 0 0 ;
 }
 
 #event-detail .flex-row i{
   color:rgb(241, 142, 250);
   margin: auto auto auto 1px; 
 }
+
+
+
+/* ------  CHAT  ------- */
+
+
+#chat-image {
+  margin: 0 15px 0 0;
+  height: 3vh;
+  width: 3vh;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.titular p {
+  font-size: 1.1em;
+  font-weight: bold;
+  color:  rgb(142, 243, 250);
+  text-shadow: 2px 2px 20px rgba(164, 242, 232, 0.575);
+}
+
+.paragraph {
+  width: 80vw;
+}
+
+#comments textarea{
+  margin: 30px 0 20px 0;
+}
+
 
 /* ------ POR ORDENAR  ---------------------------------------- */
 
@@ -812,7 +860,7 @@ a, li {
 form.center {
   display: flex;
   flex-direction: column;
-  z-index: 5;
+  align-items: center;
 }
 
 .create {

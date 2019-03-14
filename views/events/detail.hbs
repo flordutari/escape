@@ -41,15 +41,17 @@
     </form>
     {{/if}}
 
-    <div class="comments">
+    <div id="comments">
       {{#if isAlreadyIn}}
       <h3>Chat</h3><hr>
       {{#each event.comments}}
         <form class="center" action="/events/{{../event._id}}/delete-comment" method="POST">
-          <div class="comments">
+          <div class="paragraph">
+            <div class="flex-row titular">
+              <img id="chat-image" src="{{this.creator.imageUrl}}" alt="{{this.creator.imageUrl}} image">
+              <p>{{this.creator.username}} :</p>
+            </div>
             <p>{{this.comment}}</p>
-            <p>{{this.creator.username}}</p>
-            <img id="def-prof" src="{{this.creator.imageUrl}}" alt="{{this.creator.imageUrl}} image">
             <input type="hidden" name="commentId" value="{{this._id}}">
           </div>
           {{#ifCond ../currentUser._id "==" this.creator._id}}
