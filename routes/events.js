@@ -62,7 +62,7 @@ router.get('/:id', requireUser, async (req, res, next) => {
         path: 'user',
         model: 'User' }
     });
-    const rest = event.escapeRoom.capacity.maxPlayers - event.players.length;
+    const rest = event.escapeRoom.capacity.maxPlayers - event.players.length - 1;
     let isOwnProfile = false;
     if (event.creator._id.equals(userId)) {
       isOwnProfile = true;

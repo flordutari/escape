@@ -1,50 +1,62 @@
-<div class="events-list">
+<div id="event-detail" class="events-list">
   {{> navbar}}
   <div class="events">
     <h1>EVENT</h1>
     <hr>
     <img class="detail" src="{{event.escapeRoom.image}}">
-    <a href="/escape/{{event.escapeRoom._id}}">{{event.escapeRoom.name}}</a>
-    <p>{{event.date}}</p>
-    <p>{{event.showtime}}</p>
-    <p>{{event.players.0.username}}</p>
+    <div class="flex-row ">
+      <h2>{{event.escapeRoom.name}}</h2>
+      <a class="ancor-button" href="/escape/{{event.escapeRoom._id}}">See</a>
+    </div>
+    <p><i class="far fa-calendar-alt"></i>{{event.date}}</p>
+    <p><i class="far fa-clock"></i>{{event.showtime}}</p>
+    <p><i class="fas fa-user-ninja"></i>{{event.players.0.username}}</p>
+    <h3>Players</h3><hr>
     <form class="center" action="/events/{{event._id}}" method="POST">
-      <div class="field other">
+      <div class="container-players">
       {{#each event.players}}
         <a href="/profile/{{_id}}"><img class="player" src="{{imageUrl}}" alt="{{username}} image"></a>
       {{/each}}
+      {{#if isAlreadyIn}}
+        <img class="player" src="https://res.cloudinary.com/drkujr1xv/image/upload/v1552562937/project_2_images/user-default.png" alt="default image"></button>
+      {{else}}
+        <button id="default-img"><img class="player" src="https://res.cloudinary.com/drkujr1xv/image/upload/v1552565332/project_2_images/add_icon.png" alt="default image"></button>
+      {{/if}}
       {{#times rest}}
-        <button id="default-img"><img class="player" src="https://res.cloudinary.com/drkujr1xv/image/upload/v1552346612/project_2_images/default.png" alt="default image"></button>
+        <img class="player" src="https://res.cloudinary.com/drkujr1xv/image/upload/v1552562937/project_2_images/user-default.png" alt="default image"></button>
       {{/times}}
       </div>
     </form>
-    <form class="center" action="/events/{{event._id}}/unjoin" method="POST">
-      <button class="join">UNJOIN</button>
-    </form>
+    {{#if isAlreadyIn}}
+      <form class="center" action="/events/{{event._id}}/unjoin" method="POST">
+        <button class="join">UNJOIN</button>
+      </form>
+    {{/if}}
     {{#if isOwnProfile}}
     <form class="center" action="/events/{{event._id}}/delete" method="POST">
       <button class="join">DELETE</button>
     </form>
     {{/if}}
+    <h3>Chat</h3><hr>
+    <div class="comments">
+      {{#each event.comments}}
+        <p>{{this.comment}}</p>
+        <p>{{this.creator.username}}</p>
+        <input type="text" name="commentId" value="{{this._id}}">
+        {{!-- {{#if isOwnComment}} --}}
+        <form class="center" action="/events/{{eventId}}/delete-comment" method="POST">
+          <button>DELETE</button>
+        </form>
+        {{!-- {{/if}} --}}
+      {{/each}}
+    </div>
+    {{#if isAlreadyIn}}
+    <form class="comment" action="/events/{{event._id}}/comment" method="POST">
+      <textarea name="comment" placeholder="Write your text here..." tabindex="5" required></textarea>
+      <button class="join">COMENT</button>
+    </form>
+    {{/if}}
   </div>
-  <div class="comments">
-    {{#each event.comments}}
-      <p>{{this.comment}}</p>
-      <p>{{this.creator.username}}</p>
-      <input type="text" name="commentId" value="{{this._id}}">
-      {{!-- {{#if isOwnComment}} --}}
-      <form class="center" action="/events/{{eventId}}/delete-comment" method="POST">
-        <button>DELETE</button>
-      </form>
-      {{!-- {{/if}} --}}
-    {{/each}}
-  </div>
-  {{#if isAlreadyIn}}
-  <form class="comment" action="/events/{{event._id}}/comment" method="POST">
-    <textarea name="comment" placeholder="Write your text here..." tabindex="5" required></textarea>
-    <button class="join">COMENT</button>
-  </form>
-  {{/if}}
 </div>
 
                     

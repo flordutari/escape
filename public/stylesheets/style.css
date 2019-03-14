@@ -58,6 +58,17 @@ p {
 
 /* ---- components ---- */
 
+.flex-row{
+  display:flex;
+  flex-direction: row;
+}
+
+.ancor-button{
+  color: rgb(241, 142, 250);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 
 .button-alt {
   color: blue;
@@ -352,16 +363,6 @@ a {
   object-fit: cover;
 }
 
-#default-img {
-  display: flex;
-  background: none;
-  border: none;
-  width: 90px;
-  height: 90px;
-  justify-items: center;
-  align-items: center;
-}
-
 a.join {
   margin-top: 25px;
   padding: 0;
@@ -418,7 +419,7 @@ ul.validation, ul.check {
 
 .events-list{
   width: 100%;
-  /* background-color: #262025; */
+  background-color: #262025;
   min-height: 100vh;
 }
 
@@ -613,6 +614,59 @@ ul.validation, ul.check {
   align-self: center;
 }
 
+/* ----- EVENT DETAIL ------  */
+
+#event-detail .ancor-button{
+  margin: auto 0px auto auto;
+}
+
+#event-detail p {
+  margin: 10px auto auto 0px;
+}
+
+#event-detail i {
+  margin: auto 20px auto 10px;
+}
+
+
+
+img.player {
+  width: 20vw;
+  height: 20vw;
+  /* margin: 10px; */
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px 10px;
+}
+
+#default-img {
+  /* display: flex; */
+  background: none;
+  border: none;
+  /* width: 20vw;
+  height: 20vw; */
+  justify-items: center;
+  align-items: center; 
+}
+
+#event-detail .container-players {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  
+}
+
+#event-detail button {
+  padding:0px;
+}
+
+
+
+
+
 
 
 /* ------ POR ORDENAR  ---------------------------------------- */
@@ -684,13 +738,6 @@ hr {
   margin: 0 0 15px 0;
 }
 
-img.player {
-  width: 20vw;
-  height: 20vw;
-  margin: 10px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
 #joined-events {
   width: 60vw;
@@ -698,8 +745,7 @@ img.player {
 }
 
 img.detail {
-  width: 200%;
-  /* height: 150px; */
+  width: 100vw;
   overflow: hidden;
   object-fit: cover;
 }
