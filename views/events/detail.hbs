@@ -57,6 +57,29 @@
     </form>
     {{/if}}
   </div>
+      {{#each event.comments}}
+        <form class="center" action="/events/{{../event._id}}/delete-comment" method="POST">
+          <div class="comments">
+            <p>{{this.comment}}</p>
+            <p>{{this.creator.username}}</p>
+            <img id="def-prof" src="{{this.creator.imageUrl}}" alt="{{this.creator.imageUrl}} image">
+            <input type="hidden" name="commentId" value="{{this._id}}">
+          </div>
+          {{#if ../isOwnComment}}
+            <button>DELETE</button>
+          {{/if}}
+        </form>
+      {{/each}}
+  {{#if isAlreadyIn}}
+  <form class="comment" action="/events/{{event._id}}/comment" method="POST">
+    <textarea name="comment" placeholder="Write your text here..." tabindex="5" required></textarea>
+    <button class="join">COMMENT</button>
+  </form>
+  {{/if}}
 </div>
 
-                    
+{{#ifCond v1 v2}}
+    {{v1}} is equal to {{v2}}
+{{else}}
+    {{v1}} is not equal to {{v2}}
+{{/ifCond}}

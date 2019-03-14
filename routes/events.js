@@ -66,14 +66,24 @@ router.get('/:id', requireUser, async (req, res, next) => {
     let isOwnProfile = false;
     if (event.creator._id.equals(userId)) {
       isOwnProfile = true;
-    }
+    };
+
+    let isOwnComment = false;
+    event.comments.map((a) => {
+      if (a.creator._id.equals(userId)) {
+        isOwnComment = true;
+      }
+    });
+    console.log(isOwnComment);
+
     let isAlreadyIn = false;
     event.players.map((a) => {
       if (a._id.equals(userId)) {
         isAlreadyIn = true;
       }
     });
-    res.render('events/detail', { event, rest, isOwnProfile, isAlreadyIn, eventId });
+
+    res.render('events/detail', { event, rest, isOwnProfile, isAlreadyIn, eventId, isOwnComment });
   } catch (error) {
     next(error);
   }
@@ -129,9 +139,9 @@ router.post('/:id/comment', requireUser, async (req, res, next) => {
 router.post('/:id/delete-comment', requireUser, async (req, res, next) => {
   const eventId = req.params.id;
   const { commentId } = req.body;
+  const commentID = mongoose.mongo.ObjectID(commentId);
   try {
-    const event = Event.findById(eventId).populate('comments');
-    const comment = await event.comments.findByIdAndDelete(commentId);
+    await Event.findByIdAndUpdate(eventId, { $pull: { 'comments': { _id: commentID } } });
     res.redirect('/events/' + eventId);
   } catch (error) {
     next(error);
