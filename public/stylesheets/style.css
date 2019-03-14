@@ -106,6 +106,7 @@ li {
   display: flex;
   justify-content: space-between;
   position: fixed;
+  z-index: 12;
 }
 nav {
   height: 8vh;
@@ -239,7 +240,7 @@ button.join {
   position: relative;
   top: 2.5px;
   left: 25px;
-  z-index: 1;
+  z-index: 15;
   -webkit-user-select: none;
   user-select: none;
   justify-content: center;
@@ -252,7 +253,7 @@ button.join {
   position: absolute;
   cursor: pointer;
   opacity: 0;
-  z-index: 2;
+  z-index: 20;
 }
 
 #menu-toggle span {
@@ -263,7 +264,7 @@ button.join {
   position: relative;
   background: #fafafa;
   border-radius: 3px;
-  z-index: 1;
+  z-index: 15;
   transform-origin: 5px 0px;
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
@@ -311,12 +312,14 @@ button.join {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 12;
 }
 
 #menu li {
   padding: 10px 0;
   transition-delay: 2s;
   margin: 20px 0;
+  z-index: 12;
 }
 
 #menu-toggle input:checked ~ ul {
@@ -329,6 +332,7 @@ button.join {
   color: #fafafa;
   font-weight: 800;
   font-size: 1.5em;
+  z-index: 12;
 }
 
 #menu a:hover {
@@ -354,6 +358,10 @@ a {
   font-size: 1.2em;
 }
 
+#nav-bar i {
+  font-size: 3em;
+}
+
 #profile-img {
   width: 50vw;
   height: 50vw;
@@ -365,15 +373,38 @@ a {
 #description {
   font-size: 1.3em;
   margin-bottom: 1.5vh;
-  text-: 
 }
 
 #def-prof {
   margin: 0 15px;
-  height: 6vh;
-  width: 6vh;
+  height: 5vh;
+  width: 5vh;
   border-radius: 50%;
   object-fit: cover;
+}
+
+/* -----EDIT */
+
+.edit {
+  display: flex;
+  align-content: center;
+  flex-direction: center;
+}
+
+.edit input>button {
+  background-color: #262025;
+  color: #fafafa;
+}
+
+.center div {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.center label {
+  margin: 15px;
 }
 
 a.join {
@@ -393,7 +424,7 @@ a.join {
 }
 
 button.logout {
-  background-color:  #262025;
+  background-color: #262025;
   border: none;
   color:  #fafafa;
   font-size: 1.5em;
@@ -401,7 +432,10 @@ button.logout {
   font-family: 'Raleway';
   outline: none;
   text-transform: uppercase;
-  padding: 20px 0;
+}
+
+.logout-form {
+  margin-top: 20px;
 }
 
 input, select {
@@ -688,19 +722,11 @@ img.player {
   margin: auto auto auto 1px; 
 }
 
-
-
-
-
 /* ------ POR ORDENAR  ---------------------------------------- */
-
-
-
 
 div.escapes-link {
   width: 100%;
   height: 7vh;
-  position: relative;
   background: rgb(167, 13, 118);
   display: flex;
   justify-content: center;
@@ -786,6 +812,7 @@ a, li {
 form.center {
   display: flex;
   flex-direction: column;
+  z-index: 5;
 }
 
 .create {
