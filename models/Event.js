@@ -27,7 +27,11 @@ const eventSchema = new Schema({
       type: ObjectId,
       ref: 'User'
     }]
-  }
+  },
+  comments: [{
+    type: String,
+    ref: 'User'
+  }]
 });
 
 const Event = mongoose.model('Event', eventSchema);

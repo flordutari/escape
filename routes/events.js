@@ -53,16 +53,22 @@ router.post('/:id/create', requireFields, requireUser, async (req, res, next) =>
 });
 
 router.get('/:id', requireUser, async (req, res, next) => {
-  const { id } = req.params;
-  const { _id } = req.session.currentUser;
+  const eventId = req.params.id;
+  const userId = req.session.currentUser._id;
   try {
-    const event = await Event.findById(id).populate('creator escapeRoom players');
+    const event = await Event.findById(eventId).populate('creator escapeRoom players');
     const rest = event.escapeRoom.capacity.maxPlayers - event.players.length;
     let isOwnProfile = false;
-    if (event.creator._id.equals(_id)) {
+    if (event.creator._id.equals(userId)) {
       isOwnProfile = true;
     }
-    res.render('events/detail', { event, rest, isOwnProfile });
+    let isAlreadyIn = false;
+    event.players.map((a) => {
+      if (a._id.equals(userId)) {
+        isAlreadyIn = true;
+      }
+    });
+    res.render('events/detail', { event, rest, isOwnProfile, isAlreadyIn });
   } catch (error) {
     next(error);
   }
@@ -96,6 +102,18 @@ router.post('/:id/unjoin', requireUser, async (req, res, next) => {
     const userID = mongoose.mongo.ObjectID(userId);
     await Event.findByIdAndUpdate(eventId, { $pull: { 'players': userID } });
     await User.findByIdAndUpdate(userId, { $pull: { 'myEvents': eventId } });
+    res.redirect('/events/' + eventId);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/:id/comment', requireUser, async (req, res, next) => {
+  const eventId = req.params.id;
+  const { comment } = req.body;
+
+  try {
+    await Event.findByIdAndUpdate(eventId, { $push: { 'comments': comment } });
     res.redirect('/events/' + eventId);
   } catch (error) {
     next(error);
