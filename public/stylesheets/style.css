@@ -56,27 +56,15 @@ p {
 /* ---- layout ---- */
 @media (min-width: 768px) {
   .container {
-    max-width: 728px;
+    max-width: 728px;.verticalLine {
+      border-left: thick solid #ff0000;
+    }
     margin: 0 auto;
   }
 }
 
 /* ---- components ---- */
 
-.new {
-  background: none;
-  height: auto;
-  width: auto;
-  padding: 7px 10px;
-  border-radius: 2.2vh;
-  font-size: .75em;
-  align-self: center;
-  border: 1px solid white;
-}
-
-.new-detail {
-  margin-top: 40px;
-}
 
 .button-alt {
   color: blue;
@@ -102,6 +90,12 @@ li {
 
 
 /* ----- SECTIONS ----- */
+
+
+
+/* ----- NAV-BAR */
+
+
 
 #nav-bar {
   display: flex;
@@ -133,6 +127,13 @@ nav {
 div.nav-bar {
   width: auto;
 }
+
+
+
+/* ----- LOGIN/SIGNUP  */
+
+
+
 
 .escape-room-logo {
   width: 180px;
@@ -200,22 +201,8 @@ button.join {
   box-shadow: 0px 0px 127px 23px rgba(242,164,242,0.39);
 }
 
-li.escape-rooms {
-  width: 45vw;
-  height: 26vh;
-  background-color: #2e2e2e;
-  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-}
 
-.escape-rooms img {
-  width: 40vw;
-  height: 25vh;
-  align-self: center;
-  overflow: hidden;
-  object-fit: cover;
-}
+/* ----- FOOTER  */
 
 #footer {
   font-size: 1.2em;
@@ -238,6 +225,8 @@ li.escape-rooms {
   width: 6.2vh;
   fill: currentColor;
 }
+
+/* ----- MENU TOGGLE  */
 
 #menu-toggle {
   display: flex;
@@ -348,6 +337,8 @@ a {
   align-self: center;
 }
 
+/* ----- PROFILE  */
+
 .profile {
   display: flex;
   flex-direction: row;
@@ -426,6 +417,12 @@ ul.validation, ul.check {
   text-align: center;
 }
 
+
+
+/* ----- EVENTS LIST ------ */
+
+
+
 .events-list{
   width: 100%;
   background-color: #262025;
@@ -454,20 +451,30 @@ ul.validation, ul.check {
   margin: 0;
 }
 
-/* .events li {
+.events li {
   width: 45%;
   height: 23vh;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-} */
+}
 
-.list {
-  display: flex; 
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
+.events li {
+  width: 45vw;
+  height: 26vh;
+  background-color: #2e2e2e;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75); */
 } 
+
+.events img {
+  width: 40vw;
+  height: 25vh;
+  align-self: center;
+  overflow: hidden;
+  object-fit: cover;
+}
 
 .list li {
   display: flex;
@@ -481,16 +488,16 @@ ul.validation, ul.check {
   object-fit: cover;
   height: 20vh;
   width: 20vw;
-}
+} 
 
-#pes {
+#card-content {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
 }
-#pes .p {
+#card-content .p {
   display: flex;
   flex-direction: row;
   justify-self: flex-start;
@@ -498,13 +505,13 @@ ul.validation, ul.check {
   margin: 1vh 0px;
 }
 
-#pes i {
+#card-content i {
   font-size: 1.5em;
   margin-right: 5vw;
   margin-left: 5vw;
 }
 
-#pes p {
+#card-content p {
   font-size: 1.1em;
   justify-self: flex-start;
   text-align: start;
@@ -512,14 +519,113 @@ ul.validation, ul.check {
 }
 
 
-.new-list {
-  margin-bottom: 2vh;
+/* ----- ESCAPE ROOMS LIST ------  */
+
+
+
+.escape-list{
+  width: 100%;
+  background-color: #262025;
+  min-height: 100vh;
 }
-/* 
-.events p:first-of-type {
+
+.escapes {
+  display: flex;
+  color:  #fafafa;
+  margin: 8vh 20px;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.escapes ul {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.escapes li {
+  width: 45%;
+  height: 23vh;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.escapes img {
+  width: 40vw;
+  height: 10vh;
+  align-self: center;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.escapes li .content-card{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height: 100%;
+  justify-content: center;
+  background-color: #2e2e2e; 
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);  
+  border-bottom-right-radius: 30%;
+}
+
+.content-card .name  {
+  padding: 0;
+  margin: 0;
+}
+
+.escapes hr  {
+  border: 1px solid rgb(241, 142, 250);
+  box-shadow: 0px 0px 20px 5px rgba(242,164,242,0.39); 
+}
+
+#laser-card  {
+  margin: 15px 0 ;
+  border: 1px solid rgb(142, 243, 250);
+  border-radius: 25%;
+  box-shadow: 0px 0px 20px 5px rgba(164, 242, 232, 0.575); 
+}
+
+/* ----- NEW EVENT ------  */
+
+.new {
+  color: rgb(241, 142, 250);
+  background: none;
+  height: auto;
+  width: auto;
+  font-size: 1em;
+  font-weight: bold;
+  align-self: center;
+  /* border-top: 1px solid white; */
+  
+}
+
+.new-detail {
+  margin-top: 40px;
+}
+
+.new-list {
+  /* margin-bottom: 2vh; */
+}
+
+.escapes p:first-of-type {
   margin: 8px 0;
   align-self: center;
-} */
+}
+
+
+
+/* ------ POR ORDENAR  ---------------------------------------- */
+
+
+
 
 div.escapes-link {
   width: 100%;
@@ -567,6 +673,11 @@ div.escapes-link {
   color: #d1d1d1;
 }
 
+#escape-description i{
+  margin: 0 5vw 0 0;
+}
+
+
 .description {
   color: #aaaaaa;
   margin: 20px 0;
@@ -594,8 +705,8 @@ img.player {
 }
 
 img.detail {
-  width: 100%;
-  height: 150px;
+  width: 200%;
+  /* height: 150px; */
   overflow: hidden;
   object-fit: cover;
 }

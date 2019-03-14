@@ -4,14 +4,14 @@
     <h1>ESCAPE ROOM</h1>
     <img class="detail" src="{{escapeRoom.image}}" alt="{{escapeRoom.name}} image">
     <h3>{{escapeRoom.name}}</h3>
-    <div>
+    <div id="escape-description">
       <p class="description">{{escapeRoom.description}}</p>
-      <p>DIFICULTY: {{escapeRoom.dificulty}}</p>
-      <p>CAPACITY: {{escapeRoom.capacity.maxPlayers}}</p>
-      <p>DURATION:{{escapeRoom.duration}} min</p>
-      <p>ADRESS: {{escapeRoom.direction}}</p>
-      <p>DAYS: {{escapeRoom.schedule.days}}</p>
-      <p>SHOWTIME:{{escapeRoom.schedule.showtime}}</p>
+      {{!-- <p>DIFICULTY: {{escapeRoom.dificulty}}</p> --}}
+      <p><i class="fas fa-users"></i>{{escapeRoom.capacity.maxPlayers}}</p><br>
+      <p><i class="fas fa-hourglass-half"></i>{{escapeRoom.duration}} min</p><br>
+      <p><i class="fas fa-map-marker-alt"></i>{{escapeRoom.direction}}</p><br>
+      <p><i class="far fa-calendar-alt"></i>{{escapeRoom.schedule.days}}</p><br>
+      <p><i class="far fa-clock"></i>{{escapeRoom.schedule.showtime}}</p><br>
     </div>
     <a class="new new-detail" href="/events/{{escapeRoom.id}}/create">NEW EVENT</a>
   </div>
