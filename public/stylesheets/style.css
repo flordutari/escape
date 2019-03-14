@@ -641,8 +641,6 @@ ul.validation, ul.check {
   margin: auto 20px auto 10px;
 }
 
-
-
 img.player {
   width: 20vw;
   height: 20vw;
@@ -676,7 +674,19 @@ img.player {
   padding:0px;
 }
 
+#event-detail .flex-row {
+  margin: 20px 0 5px 0;
+  justify-content: space-between;
+}
 
+#event-detail .flex-row h3 {
+  margin: 0;
+}
+
+#event-detail .flex-row i{
+  color:rgb(241, 142, 250);
+  margin: auto auto auto 1px; 
+}
 
 
 
