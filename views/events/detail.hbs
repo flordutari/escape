@@ -4,14 +4,22 @@
     <h1>EVENT</h1>
     <hr>
     <img class="detail" src="{{event.escapeRoom.image}}">
-    <div class="flex-row ">
+    <div class="flex-row">
       <h2>{{event.escapeRoom.name}}</h2>
       <a class="ancor-button" href="/escape/{{event.escapeRoom._id}}">See</a>
     </div>
     <p><i class="far fa-calendar-alt"></i>{{event.date}}</p>
     <p><i class="far fa-clock"></i>{{event.showtime}}</p>
     <p><i class="fas fa-user-ninja"></i>{{event.players.0.username}}</p>
-    <h3>Players</h3><hr>
+    <div class="flex-row">
+      <h3>Players</h3>
+      {{#if isAlreadyIn}}
+        <form class="icon-bin" action="/events/{{event._id}}/unjoin" method="POST">
+          <button id="default-img" class="ancor-button"><i class="fas fa-user-times"></i></button>
+        </form>
+      {{/if}}
+    </div>
+    <hr>
     <form class="center" action="/events/{{event._id}}" method="POST">
       <div class="container-players">
       {{#each event.players}}
@@ -27,36 +35,15 @@
       {{/times}}
       </div>
     </form>
-    {{#if isAlreadyIn}}
-      <form class="center" action="/events/{{event._id}}/unjoin" method="POST">
-        <button class="join">UNJOIN</button>
-      </form>
-    {{/if}}
     {{#if isOwnProfile}}
     <form class="center" action="/events/{{event._id}}/delete" method="POST">
       <button class="join">DELETE</button>
     </form>
     {{/if}}
-    <h3>Chat</h3><hr>
+
     <div class="comments">
-      {{#each event.comments}}
-        <p>{{this.comment}}</p>
-        <p>{{this.creator.username}}</p>
-        <input type="text" name="commentId" value="{{this._id}}">
-        {{!-- {{#if isOwnComment}} --}}
-        <form class="center" action="/events/{{eventId}}/delete-comment" method="POST">
-          <button>DELETE</button>
-        </form>
-        {{!-- {{/if}} --}}
-      {{/each}}
-    </div>
-    {{#if isAlreadyIn}}
-    <form class="comment" action="/events/{{event._id}}/comment" method="POST">
-      <textarea name="comment" placeholder="Write your text here..." tabindex="5" required></textarea>
-      <button class="join">COMENT</button>
-    </form>
-    {{/if}}
-  </div>
+      {{#if isAlreadyIn}}
+      <h3>Chat</h3><hr>
       {{#each event.comments}}
         <form class="center" action="/events/{{../event._id}}/delete-comment" method="POST">
           <div class="comments">
@@ -66,20 +53,16 @@
             <input type="hidden" name="commentId" value="{{this._id}}">
           </div>
           {{#if ../isOwnComment}}
-            <button>DELETE</button>
+            <button id="default-img" class="ancor-button"><i class="far fa-trash-alt"></i></button>
           {{/if}}
         </form>
       {{/each}}
-  {{#if isAlreadyIn}}
-  <form class="comment" action="/events/{{event._id}}/comment" method="POST">
-    <textarea name="comment" placeholder="Write your text here..." tabindex="5" required></textarea>
-    <button class="join">COMMENT</button>
-  </form>
-  {{/if}}
+      <form class="comment" action="/events/{{event._id}}/comment" method="POST">
+        <textarea name="comment" placeholder="Write your text here..." tabindex="5" required></textarea>
+        <button class="join">COMMENT</button>
+      </form>
+      {{/if}}
+    </div>
+  </div>
 </div>
 
-{{#ifCond v1 v2}}
-    {{v1}} is equal to {{v2}}
-{{else}}
-    {{v1}} is not equal to {{v2}}
-{{/ifCond}}
