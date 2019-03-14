@@ -27,24 +27,23 @@
     </form>
     {{/if}}
   </div>
-  <div class="comments">
-    {{#each event.comments}}
-      <p>{{this.comment}}</p>
-      <p>{{this.creator.username}}</p>
-      <input type="text" name="commentId" value="{{this._id}}">
-      {{!-- {{#if isOwnComment}} --}}
-      <form class="center" action="/events/{{eventId}}/delete-comment" method="POST">
-        <button>DELETE</button>
-      </form>
-      {{!-- {{/if}} --}}
-    {{/each}}
-  </div>
+      {{#each event.comments}}
+        <form class="center" action="/events/{{../event._id}}/delete-comment" method="POST">
+          <div class="comments">
+            <p>{{this.comment}}</p>
+            <p>{{this.creator.username}}</p>
+            <img id="def-prof" src="{{this.creator.imageUrl}}" alt="{{this.creator.imageUrl}} image">
+            <input type="hidden" name="commentId" value="{{this._id}}">
+          </div>
+          {{#if isOwnComment}}
+            <button >DELETE</button>
+          {{/if}}
+        </form>
+      {{/each}}
   {{#if isAlreadyIn}}
   <form class="comment" action="/events/{{event._id}}/comment" method="POST">
     <textarea name="comment" placeholder="Write your text here..." tabindex="5" required></textarea>
-    <button class="join">COMENT</button>
+    <button class="join">COMMENT</button>
   </form>
   {{/if}}
 </div>
-
-                    
