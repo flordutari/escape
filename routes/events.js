@@ -12,8 +12,11 @@ const { requireUser, requireFields } = require('../middlewares/index');
 
 router.get('/list', requireUser, async (req, res, next) => {
   try {
-    const event = await Event.find().populate('escapeRoom users creator');
-    res.render('events/list', { event });
+    const events = await Event.find().populate('escapeRoom users creator');
+    const eventsWithAvailability = events.filter((event) => {
+      return event.players.length < event.escapeRoom.capacity.maxPlayers;
+    });
+    res.render('events/list', { events: eventsWithAvailability });
   } catch (error) {
     next(error);
   }
@@ -68,9 +71,15 @@ router.get('/:id', requireUser, async (req, res, next) => {
 router.post('/:id', requireUser, async (req, res, next) => {
   const eventId = req.params.id;
   const userId = req.session.currentUser._id;
-  const event = await Event.findById(eventId).populate('creator escapeRoom players users');
+  const event = await Event.findById(eventId).populate('players escapeRoom');
+  let notAlreadyIn = true;
+  event.players.map((a) => {
+    if (a._id.equals(userId)) {
+      notAlreadyIn = false;
+    }
+  });
   try {
-    if (event.players.length < event.escapeRoom.capacity.maxPlayers) {
+    if (event.players.length < event.escapeRoom.capacity.maxPlayers && notAlreadyIn) {
       await Event.findByIdAndUpdate(eventId, { $push: { 'players': userId } });
       await User.findByIdAndUpdate(userId, { $push: { 'myEvents': eventId } });
     }

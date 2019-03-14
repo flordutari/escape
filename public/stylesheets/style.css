@@ -10,12 +10,6 @@ rgb(241, 142, 250); */
 
 #262025; */
 
-
-
-
-
-
-
 /* ---- reset ---- */
 
 *, *:before, *:after {
@@ -432,7 +426,9 @@ ul.validation, ul.check {
 .events {
   display: flex;
   color:  #fafafa;
-  margin: 8vh 20px;
+  margin: 8
+  
+  vh 20px;
   flex-direction: column;
   min-height: 100vh;
 }

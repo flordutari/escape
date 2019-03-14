@@ -66,11 +66,10 @@ router.post('/edit', requireUser, parser.single('image'), async (req, res, next)
   }
   try {
     if (!username || !description) {
-      req.flash('check-edit', 'You need a Name and description');
+      req.flash('check-edit', 'You need a name and description');
       res.redirect('/profile/edit');
       return;
     }
-    console.log(user.username, user.description);
     const updatedUser = await User.findByIdAndUpdate(_id, user, { new: true });
     req.session.currentUser = updatedUser;
     res.redirect('/profile/' + _id);
