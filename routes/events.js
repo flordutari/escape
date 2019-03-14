@@ -53,16 +53,27 @@ router.post('/:id/create', requireFields, requireUser, async (req, res, next) =>
 });
 
 router.get('/:id', requireUser, async (req, res, next) => {
-  const { id } = req.params;
-  const { _id } = req.session.currentUser;
+  const eventId = req.params.id;
+  const userId = req.session.currentUser._id;
   try {
-    const event = await Event.findById(id).populate('creator escapeRoom players');
+    const event = await Event.findById(eventId).populate({
+      path: 'comments.creator escapeRoom players creator',
+      populate: {
+        path: 'user',
+        model: 'User' }
+    });
     const rest = event.escapeRoom.capacity.maxPlayers - event.players.length;
     let isOwnProfile = false;
-    if (event.creator._id.equals(_id)) {
+    if (event.creator._id.equals(userId)) {
       isOwnProfile = true;
     }
-    res.render('events/detail', { event, rest, isOwnProfile });
+    let isAlreadyIn = false;
+    event.players.map((a) => {
+      if (a._id.equals(userId)) {
+        isAlreadyIn = true;
+      }
+    });
+    res.render('events/detail', { event, rest, isOwnProfile, isAlreadyIn, eventId });
   } catch (error) {
     next(error);
   }
@@ -102,10 +113,35 @@ router.post('/:id/unjoin', requireUser, async (req, res, next) => {
   }
 });
 
-router.post('/:id/delete', requireUser, async (req, res, next) => {
-  const { id } = req.params;
+router.post('/:id/comment', requireUser, async (req, res, next) => {
+  const eventId = req.params.id;
+  const { comment } = req.body;
+  const userId = req.session.currentUser._id;
+  const userID = mongoose.mongo.ObjectID(userId);
   try {
-    await Event.findByIdAndDelete(id);
+    await Event.findByIdAndUpdate(eventId, { $push: { 'comments': { 'comment': comment, 'creator': userID } } });
+    res.redirect('/events/' + eventId);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/:id/delete-comment', requireUser, async (req, res, next) => {
+  const eventId = req.params.id;
+  const { commentId } = req.body;
+  try {
+    const event = Event.findById(eventId).populate('comments');
+    const comment = await event.comments.findByIdAndDelete(commentId);
+    res.redirect('/events/' + eventId);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post('/:id/delete', requireUser, async (req, res, next) => {
+  const eventId = req.params.id;
+  try {
+    await Event.findByIdAndDelete(eventId);
     res.redirect('/events/list');
   } catch (error) {
     next(error);
