@@ -29,8 +29,13 @@ const eventSchema = new Schema({
     }]
   },
   comments: [{
-    type: String,
-    ref: 'User'
+    comment: {
+      type: String
+    },
+    creator: {
+      type: ObjectId,
+      ref: 'User'
+    }
   }]
 });
 

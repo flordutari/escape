@@ -56,7 +56,12 @@ router.get('/:id', requireUser, async (req, res, next) => {
   const eventId = req.params.id;
   const userId = req.session.currentUser._id;
   try {
-    const event = await Event.findById(eventId).populate('creator escapeRoom players');
+    const event = await Event.findById(eventId).populate({
+      path: 'comments.creator escapeRoom players creator',
+      populate: {
+        path: 'user',
+        model: 'User' }
+    });
     const rest = event.escapeRoom.capacity.maxPlayers - event.players.length;
     let isOwnProfile = false;
     if (event.creator._id.equals(userId)) {
@@ -111,9 +116,10 @@ router.post('/:id/unjoin', requireUser, async (req, res, next) => {
 router.post('/:id/comment', requireUser, async (req, res, next) => {
   const eventId = req.params.id;
   const { comment } = req.body;
-
+  const userId = req.session.currentUser._id;
+  const userID = mongoose.mongo.ObjectID(userId);
   try {
-    await Event.findByIdAndUpdate(eventId, { $push: { 'comments': comment } });
+    await Event.findByIdAndUpdate(eventId, { $push: { 'comments': { 'comment': comment, 'creator': userID } } });
     res.redirect('/events/' + eventId);
   } catch (error) {
     next(error);

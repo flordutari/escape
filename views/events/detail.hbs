@@ -29,13 +29,13 @@
   </div>
   <div class="comments">
     {{#each event.comments}}
-      <p>{{this}}</p>
+      <p>{{this.comment}}</p>
+      <p>{{this.creator.username}}</p>
     {{/each}}
   </div>
   {{#if isAlreadyIn}}
   <form class="comment" action="/events/{{event._id}}/comment" method="POST">
     <textarea name="comment" placeholder="Write your text here..." tabindex="5" required></textarea>
-    <input type="text" placeholder="{{currentUser._id}}">
     <button class="join">COMENT</button>
   </form>
   {{/if}}
