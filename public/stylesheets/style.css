@@ -550,7 +550,6 @@ ul.validation, ul.check {
   flex-direction: row;
   justify-self: flex-start;
   text-align: start;
-  margin: 0.5vh 0px;
 }
 
 #card-content i {
@@ -619,8 +618,7 @@ ul.validation, ul.check {
   height: 23vh;
   margin-bottom: 30px;
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column; 
 }
 
 .escapes img {
@@ -1038,7 +1036,7 @@ textarea {
   max-height: 25vh;
   resize: vertical;
   align-self: center;
-  background-color: #262025;
+  background-color: #777;
   color: #fafafa;
   font-family: 'Raleway';
   border: 1px solid rgb(241, 142, 250);
@@ -1066,7 +1064,7 @@ textarea {
 .slick-prev:before,
 .slick-next:before {
   content: ">";
-  color: #262025;
+  color: #777;
   font-size: 25px;
 }
 .slick-prev {
@@ -1093,7 +1091,8 @@ textarea {
   background-color: #777;
   margin-right: 10px;
   border-radius: 50%;
+  background: grey;
 }
 .slick-dots li.slick-active button {
-  background-color: #262025;
+  background-color: rgb(241, 142, 250);
 }
