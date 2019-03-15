@@ -1028,6 +1028,10 @@ form.comment {
   flex-direction: column;
 }
 
+input, button, a {
+  outline: none;
+}
+
 textarea {
   height: 12vh;
   width: 80vw;
