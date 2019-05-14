@@ -1,4 +1,11 @@
-# Adopt a Pet
+# Escape Rooms App
+# Developers: 
+Flor dutari - Miguel Angel Moreno 
+# Link to App: 
+https://escape-rooms-fm.herokuapp.com/auth/login
+
+* use in mode mobile device at browser, iphone X prefered
+
 
 ## Description
 
@@ -112,15 +119,12 @@ Event model
 
 ## Links
 
-### Trello
-
-[Link to your trello board](https://trello.com) or picture of your physical board
 
 ### Git
 
 The url to your repository and to your deployed project
 
-[Repository Link](http://github.com)
+[Repository Link] (http://github.com)
 
 [Deploy Link] ('https://escape-rooms-fm.herokuapp.com/ ')
 
