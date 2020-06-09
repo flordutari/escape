@@ -1,6 +1,6 @@
 # Escape Rooms App
 # Developers: 
-Flor dutari - Miguel Angel Moreno 
+Flor Dutari - Miguel Angel Moreno 
 # Link to App: 
 https://escape-rooms-fm.herokuapp.com/auth/login
 
@@ -9,7 +9,7 @@ https://escape-rooms-fm.herokuapp.com/auth/login
 
 ## Description
 
-An app where users can put their pets for adoption for a short period of time. As a user you can adopt or give in adoption for a short period of time.
+An app where users create Escape room sessions.
  
 ## User Stories
 
